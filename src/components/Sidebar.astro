@@ -1,29 +1,49 @@
-<div x-data="{ open: false }" class="flex h-full flex-col">
-  <div class="flex items-center justify-between border-b p-4 text-xl font-bold">
+---
+const menuItems = global.menu;
+---
+
+<div
+  x-data="{ open: false, activeId: '' }"
+  x-init="
+    const sections = document.querySelectorAll('section[id]');
+    const handler = () => {
+      let current = '';
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top <= 150 && rect.bottom >= 150) current = sec.id;
+      });
+      activeId = current;
+    };
+    window.addEventListener('scroll', handler);
+    handler();
+  "
+  class="h-full flex flex-col"
+>
+  <div class="p-4 font-bold text-xl border-b flex justify-between items-center bg-white sticky top-0 z-10">
     <span>Menü</span>
     <button class="lg:hidden" @click="open = !open">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"></path>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+        viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16" />
       </svg>
     </button>
   </div>
 
-  <nav :class="{'hidden': !open && window.innerWidth < 1024}" class="flex-1 overflow-y-auto">
-    <ul class="space-y-2 p-4">
-      <li><a href="#intro" class="block hover:text-blue-600">Bevezetés</a></li>
-      <li><a href="#section1" class="block hover:text-blue-600">Fejezet 1</a></li>
-      <li><a href="#section2" class="block hover:text-blue-600">Fejezet 2</a></li>
-      <li><a href="#section3" class="block hover:text-blue-600">Kapcsolat</a></li>
+  <nav :class="{'hidden': !open && window.innerWidth < 1024}" class="flex-1 overflow-y-auto bg-white">
+    <ul class="p-4 space-y-2">
+      {menuItems.map((item) => (
+        <li>
+          <a
+            href={`#${item.id}`}
+            x-bind:class="activeId === '{item.id}'
+              ? 'block px-3 py-2 rounded-md bg-blue-50 text-blue-600 font-semibold transition'
+              : 'block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition'"
+          >
+            {item.label}
+          </a>
+        </li>
+      ))}
     </ul>
   </nav>
 </div>
