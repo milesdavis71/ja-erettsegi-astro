@@ -1,0 +1,47 @@
+---
+import '../styles/global.css'
+import Sidebar from '../components/Sidebar.astro'
+import TocNav from '../components/TocNav.astro'
+---
+
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Junior Akadémia</title>
+  </head>
+
+  <body class="bg-gray-50 font-sans text-gray-800">
+    <div class="flex min-h-screen">
+      <!-- Bal oldali menü -->
+      <aside class="fixed hidden h-full w-64 border-r bg-white shadow-sm lg:block">
+        <Sidebar />
+      </aside>
+
+      <!-- Fő tartalom -->
+      <main class="flex-1 px-4 py-6 lg:mr-64 lg:ml-64">
+        <slot />
+      </main>
+
+      <!-- Jobb oldali navigáció -->
+      <aside
+        x-data="{ active: '' }"
+        x-init="const sections = document.querySelectorAll('section');
+          window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(sec => {
+              const top = sec.offsetTop - 150;
+              if (scrollY >= top) current = sec.getAttribute('id');
+            });
+            active = current;
+          });
+        "
+        class="fixed right-0 hidden h-full w-64 overflow-y-auto border-l bg-white py-6 shadow-sm lg:block"
+      >
+        <TocNav />
+      </aside>
+    </div>
+
+    <script type="module" src="/src/scripts/alpine.js"></script>
+  </body>
+</html>

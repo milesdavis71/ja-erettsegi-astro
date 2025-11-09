@@ -1,0 +1,23 @@
+<ul
+  class="space-y-2 px-6"
+  x-data
+  x-init="
+  const links = $el.querySelectorAll('a');
+  window.addEventListener('scroll', () => {
+    const fromTop = window.scrollY + 200;
+    links.forEach(link => {
+      const section = document.querySelector(link.hash);
+      if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
+        link.classList.add('text-blue-600', 'font-semibold');
+      } else {
+        link.classList.remove('text-blue-600', 'font-semibold');
+      }
+    });
+  });
+"
+>
+  <li><a href="#intro" class="block hover:text-blue-600">Bevezetés</a></li>
+  <li><a href="#section1" class="block hover:text-blue-600">Fejezet 1</a></li>
+  <li><a href="#section2" class="block hover:text-blue-600">Fejezet 2</a></li>
+  <li><a href="#section3" class="block hover:text-blue-600">Kapcsolat</a></li>
+</ul>

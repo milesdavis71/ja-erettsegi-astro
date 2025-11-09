@@ -1,11 +1,25 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import DefaultLayout from '../layouts/DefaultLayout.astro'
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<DefaultLayout>
+  <section id="intro" class="min-h-screen py-12">
+    <h1 class="mb-4 text-3xl font-bold">Bevezetés</h1>
+    <p class="max-w-2xl">Ez az Astro + Tailwind + Alpine alapú reszponzív layout...</p>
+  </section>
+
+  <section id="section1" class="min-h-screen py-12">
+    <h2 class="mb-4 text-2xl font-semibold">Fejezet 1</h2>
+    <p class="max-w-2xl">A fő tartalmi rész itt jelenik meg...</p>
+  </section>
+
+  <section id="section2" class="min-h-screen py-12">
+    <h2 class="mb-4 text-2xl font-semibold">Fejezet 2</h2>
+    <p class="max-w-2xl">Scroll közben a jobb oldali navigáció követi a szekciókat.</p>
+  </section>
+
+  <section id="section3" class="min-h-screen py-12">
+    <h2 class="mb-4 text-2xl font-semibold">Kapcsolat</h2>
+    <p class="max-w-2xl">Itt jönne a footer vagy a kapcsolat űrlap.</p>
+  </section>
+</DefaultLayout>

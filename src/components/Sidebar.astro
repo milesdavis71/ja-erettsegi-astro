@@ -1,0 +1,29 @@
+<div x-data="{ open: false }" class="flex h-full flex-col">
+  <div class="flex items-center justify-between border-b p-4 text-xl font-bold">
+    <span>Menü</span>
+    <button class="lg:hidden" @click="open = !open">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </div>
+
+  <nav :class="{'hidden': !open && window.innerWidth < 1024}" class="flex-1 overflow-y-auto">
+    <ul class="space-y-2 p-4">
+      <li><a href="#intro" class="block hover:text-blue-600">Bevezetés</a></li>
+      <li><a href="#section1" class="block hover:text-blue-600">Fejezet 1</a></li>
+      <li><a href="#section2" class="block hover:text-blue-600">Fejezet 2</a></li>
+      <li><a href="#section3" class="block hover:text-blue-600">Kapcsolat</a></li>
+    </ul>
+  </nav>
+</div>
