@@ -1,49 +1,30 @@
 ---
-const menuItems = global.menu;
+const { menu } = Astro.props; // a DefaultLayout-ból érkezik
+const currentUrl = Astro.url.pathname; // aktuális oldal URL-je
 ---
 
-<div
-  x-data="{ open: false, activeId: '' }"
-  x-init="
-    const sections = document.querySelectorAll('section[id]');
-    const handler = () => {
-      let current = '';
-      sections.forEach(sec => {
-        const rect = sec.getBoundingClientRect();
-        if (rect.top <= 150 && rect.bottom >= 150) current = sec.id;
-      });
-      activeId = current;
-    };
-    window.addEventListener('scroll', handler);
-    handler();
-  "
-  class="h-full flex flex-col"
->
-  <div class="p-4 font-bold text-xl border-b flex justify-between items-center bg-white sticky top-0 z-10">
-    <span>Menü</span>
-    <button class="lg:hidden" @click="open = !open">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-        viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
-  </div>
-
-  <nav :class="{'hidden': !open && window.innerWidth < 1024}" class="flex-1 overflow-y-auto bg-white">
-    <ul class="p-4 space-y-2">
-      {menuItems.map((item) => (
-        <li>
-          <a
-            href={`#${item.id}`}
-            x-bind:class="activeId === '{item.id}'
-              ? 'block px-3 py-2 rounded-md bg-blue-50 text-blue-600 font-semibold transition'
-              : 'block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100 hover:text-blue-600 transition'"
-          >
-            {item.label}
-          </a>
-        </li>
-      ))}
+<aside class="w-full lg:w-64 bg-white border-r min-h-screen shadow-sm">
+  <nav class="p-4">
+    <ul class="space-y-1">
+      {
+        menu.map((item: any) => {
+          const isActive = currentUrl === item.url || currentUrl.startsWith(item.url + "/");
+          return (
+            <li>
+              <a
+                href={item.url}
+                class={`block px-4 py-2 rounded-md transition-colors duration-150 ${
+                  isActive
+                    ? "bg-blue-100 text-blue-700 font-semibold"
+                    : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                }`}
+              >
+                {item.label}
+              </a>
+            </li>
+          );
+        })
+      }
     </ul>
   </nav>
-</div>
+</aside>

@@ -1,23 +1,45 @@
-<ul
-  class="space-y-2 px-6"
-  x-data
+---
+/**
+ * A TocNav automatikusan kiemeli az éppen látható szakaszt
+ * (pl. <section id="intro"> vagy <h2 id="section1"> alapján).
+ * 
+ * Nem kell YAML-ból beolvasni, mert dinamikusan végigmegy a DOM elemein.
+ */
+---
+
+<div
+  x-data="{ activeId: '' }"
   x-init="
-  const links = $el.querySelectorAll('a');
-  window.addEventListener('scroll', () => {
-    const fromTop = window.scrollY + 200;
-    links.forEach(link => {
-      const section = document.querySelector(link.hash);
-      if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
-        link.classList.add('text-blue-600', 'font-semibold');
-      } else {
-        link.classList.remove('text-blue-600', 'font-semibold');
-      }
-    });
-  });
-"
+    const headings = document.querySelectorAll('main section[id], main h2[id]');
+    const onScroll = () => {
+      let current = '';
+      headings.forEach((h) => {
+        const rect = h.getBoundingClientRect();
+        if (rect.top <= 150 && rect.bottom >= 150) current = h.id;
+      });
+      activeId = current;
+    };
+    window.addEventListener('scroll', onScroll);
+    onScroll();
+  "
+  class="h-full flex flex-col px-6"
 >
-  <li><a href="#intro" class="block hover:text-blue-600">Bevezetés</a></li>
-  <li><a href="#section1" class="block hover:text-blue-600">Fejezet 1</a></li>
-  <li><a href="#section2" class="block hover:text-blue-600">Fejezet 2</a></li>
-  <li><a href="#section3" class="block hover:text-blue-600">Kapcsolat</a></li>
-</ul>
+  <h2 class="text-lg font-semibold mb-4">Tartalomjegyzék</h2>
+  <nav>
+    <ul class="space-y-2 text-sm">
+      <template x-for="link in Array.from(document.querySelectorAll('main section[id], main h2[id]')).map(h => ({ id: h.id, label: h.textContent }))">
+        <li>
+          <a
+            :href="'#' + link.id"
+            :class="activeId === link.id
+              ? 'block pl-3 border-l-4 border-blue-600 text-blue-700 font-semibold transition'
+              : 'block pl-3 border-l-4 border-transparent text-gray-700 hover:text-blue-600 hover:border-blue-200 transition'"
+            x-text="link.label"
+          ></a>
+        </li>
+      </template>
+    </ul>
+  </nav>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>

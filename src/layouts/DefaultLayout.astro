@@ -1,34 +1,74 @@
 ---
-import '../styles/global.css'
-import Sidebar from '../components/Sidebar.astro'
-import TocNav from '../components/TocNav.astro'
-import global from '../data/global.yml'
+import "../styles/global.css";
+import Sidebar from "../components/Sidebar.astro";
+import TocNav from "../components/TocNav.astro";
+import global from "../data/global.yml";
+
+// YAML fájlban pl.:
+// site:
+//   title: Junior Akadémia
+//   description: ...
+//   logo: /images/logo.svg
+// menu:
+//   - label: Bevezetés
+//     url: /
+//   - label: Programjaink
+//     url: /programjaink
+// footer:
+//   address: ...
+//   email: ...
+
+const { site, menu, footer } = global;
 ---
 
 <html lang="hu">
   <head>
-    <title>{global.site.title}</title>
-    <meta name="description" content={global.site.description} />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{site.title}</title>
+    <meta name="description" content={site.description} />
   </head>
-  <body class="bg-gray-50">
-    <header class="flex items-center justify-between p-4">
-      <img src={global.site.logo} alt="Logó" class="h-10" />
-      <nav class="hidden md:block">
-        <ul class="flex space-x-4">
-          {global.menu.map(item => (
-            <li><a href={`#${item.id}`}>{item.label}</a></li>
-          ))}
-        </ul>
-      </nav>
-    </header>
 
-    <main>
+  <body class="bg-gray-50 text-gray-800 flex min-h-screen">
+    <!-- Bal oldali menü (fix) -->
+    <aside class="hidden lg:block fixed h-full w-64 border-r bg-white shadow-sm">
+      <Sidebar menu={menu} />
+    </aside>
+
+    <!-- Központi tartalom -->
+    <main class="flex-1 w-full lg:ml-64 lg:mr-64 px-6 py-6">
+      <header class="flex items-center justify-between mb-8">
+        <img src={site.logo} alt="Logó" class="h-10" />
+        <nav class="hidden md:block">
+          <ul class="flex space-x-4">
+            {menu.map((item) => (
+              <li>
+                <a
+                  href={item.url}
+                  class="text-gray-700 hover:text-blue-600 transition-colors"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </header>
+
       <slot />
     </main>
 
-    <footer class="bg-gray-100 text-sm p-4">
-      <p>{global.footer.address}</p>
-      <p>Email: <a href={`mailto:${global.footer.email}`}>{global.footer.email}</a></p>
+    <!-- Jobb oldali tartalomjegyzék (sticky) -->
+    <aside class="hidden lg:block fixed right-0 h-full w-64 border-l bg-white shadow-sm overflow-y-auto py-6">
+      <TocNav />
+    </aside>
+
+    <!-- Lábléc (mobilon a tartalom alatt) -->
+    <footer class="w-full bg-gray-100 text-sm p-4 lg:hidden">
+      <p>{footer.address}</p>
+      <p>
+        Email: <a href={`mailto:${footer.email}`} class="text-blue-600 hover:underline">{footer.email}</a>
+      </p>
     </footer>
   </body>
 </html>

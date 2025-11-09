@@ -1,32 +1,19 @@
-site:
-  title: SZTE Junior Akadémia
-  description: >
-    A Szegedi Tudományegyetem Junior Akadémiája a Tanítsunk Magyarországért program keretében
-    működő mentorhálózatot, tehetséggondozást és pályaorientációt koordinálja.
-  baseUrl: https://juniorakademia.szte.hu
-  logo: /images/logo.svg
-
 menu:
   - id: intro
     label: Bevezetés
+    url: /
   - id: section1
     label: Programjaink
+    url: /programjaink
   - id: section2
     label: Mentorok
+    url: /mentorok
   - id: section3
     label: Kapcsolat
+    url: /kapcsolat
+
+site:
+  - title: Érettségifelkészítő
 
 footer:
-  address: "Szegedi Tudományegyetem, Dugonics tér 13., 6720 Szeged"
-  email: info@juniorakademia.hu
-  phone: "+36 62 546 000"
-  social:
-    facebook: https://facebook.com/juniorakademia
-    instagram: https://instagram.com/juniorakademia
-    youtube: https://youtube.com/@juniorakademia
-
-theme:
-  primary: "#0078D7"
-  secondary: "#E20074"
-  background: "#f9fafb"
-  text: "#1f2937"
+  - address: Szeged
