@@ -1,12 +1,12 @@
 menu:
   - id: intro
-    label: Bevezetés
+    label: Főoldal
     url: /
   - id: section1
-    label: Programjaink
-    url: /programjaink
+    label: Érettségi felkészítő tanfolyamok tanárai
+    url: /erettsegi-felkeszito-tanfolyamok-tanarai
   - id: section2
-    label: Mentorok
+    label: Tantermi érettségi felkészítő tanfolyamok órarendje
     url: /mentorok
   - id: section3
     label: Kapcsolat

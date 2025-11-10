@@ -1,0 +1,14 @@
+---
+export const frontmatter = {
+  title: "Érettségi felkészítő tanfolyamok tanárai",
+  description: "Az SZTE Junior Akadémia tanárainak bemutatása.",
+};
+
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+---
+<DefaultLayout {frontmatter}>
+  <section class="py-12">
+    <h2 class="text-2xl font-semibold mb-4">Részletek</h2>
+    <p>Ez az oldal a Junior Akadémia különböző programjait mutatja be...</p>
+  </section>
+</DefaultLayout>

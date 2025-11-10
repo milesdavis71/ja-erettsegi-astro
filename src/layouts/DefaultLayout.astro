@@ -4,20 +4,7 @@ import Sidebar from "../components/Sidebar.astro";
 import TocNav from "../components/TocNav.astro";
 import global from "../data/global.yml";
 
-// YAML fájlban pl.:
-// site:
-//   title: Junior Akadémia
-//   description: ...
-//   logo: /images/logo.svg
-// menu:
-//   - label: Bevezetés
-//     url: /
-//   - label: Programjaink
-//     url: /programjaink
-// footer:
-//   address: ...
-//   email: ...
-
+const { frontmatter } = Astro.props;
 const { site, menu, footer } = global;
 ---
 
@@ -25,45 +12,39 @@ const { site, menu, footer } = global;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{site.title}</title>
-    <meta name="description" content={site.description} />
+    <title>{frontmatter?.title ? `${frontmatter.title} – ${site.title}` : site.title}</title>
+    <meta name="description" content={frontmatter?.description || site.description} />
   </head>
 
   <body class="bg-gray-50 text-gray-800 flex min-h-screen">
-    <!-- Bal oldali menü (fix) -->
+    <!-- Bal oldali menü -->
     <aside class="hidden lg:block fixed h-full w-64 border-r bg-white shadow-sm">
       <Sidebar menu={menu} />
     </aside>
 
     <!-- Központi tartalom -->
     <main class="flex-1 w-full lg:ml-64 lg:mr-64 px-6 py-6">
-      <header class="flex items-center justify-between mb-8">
-        <img src={site.logo} alt="Logó" class="h-10" />
-        <nav class="hidden md:block">
-          <ul class="flex space-x-4">
-            {menu.map((item) => (
-              <li>
-                <a
-                  href={item.url}
-                  class="text-gray-700 hover:text-blue-600 transition-colors"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </header>
+      <!-- Oldalcím -->
+      {frontmatter?.title && (
+        <header class="mb-8">
+          <h1 class="text-3xl font-bold border-b border-gray-200 pb-3 mb-4">
+            {frontmatter.title}
+          </h1>
+          {frontmatter?.description && (
+            <p class="text-gray-600">{frontmatter.description}</p>
+          )}
+        </header>
+      )}
 
       <slot />
     </main>
 
-    <!-- Jobb oldali tartalomjegyzék (sticky) -->
+    <!-- Jobb oldali tartalomjegyzék -->
     <aside class="hidden lg:block fixed right-0 h-full w-64 border-l bg-white shadow-sm overflow-y-auto py-6">
       <TocNav />
     </aside>
 
-    <!-- Lábléc (mobilon a tartalom alatt) -->
+    <!-- Lábléc -->
     <footer class="w-full bg-gray-100 text-sm p-4 lg:hidden">
       <p>{footer.address}</p>
       <p>
