@@ -16,40 +16,47 @@ const { site, menu, footer } = global;
     <meta name="description" content={frontmatter?.description || site.description} />
   </head>
 
-  <body class="bg-gray-50 text-gray-800 flex min-h-screen">
-    <!-- Bal oldali menü -->
-    <aside class="hidden lg:block fixed h-full w-64 border-r bg-white shadow-sm">
-      <Sidebar menu={menu} />
-    </aside>
+  <body class="bg-gray-100 text-gray-800 min-h-screen">
+    <!-- Fő konténer - max 1440px, középre igazítva -->
+    <div class="max-w-[1440px] mx-auto bg-white min-h-screen flex relative">
+      <!-- Bal oldali menü -->
+      <aside class="hidden lg:block w-64 border-r bg-white shadow-sm flex-shrink-0">
+        <div class="sticky top-0 h-screen overflow-y-auto overflow-x-hidden" style="scrollbar-width: thin; scrollbar-color: rgb(203 213 225) transparent;">
+          <Sidebar menu={menu} />
+        </div>
+      </aside>
 
-    <!-- Központi tartalom -->
-    <main class="flex-1 w-full lg:ml-64 lg:mr-64 px-6 py-6">
-      <!-- Oldalcím -->
-      {frontmatter?.title && (
-        <header class="mb-8">
-          <h1 class="text-3xl font-bold border-b border-gray-200 pb-3 mb-4">
-            {frontmatter.title}
-          </h1>
-          {frontmatter?.description && (
-            <p class="text-gray-600">{frontmatter.description}</p>
-          )}
-        </header>
-      )}
+      <!-- Központi tartalom -->
+      <main class="flex-1 w-full px-6 py-6">
+        <!-- Oldalcím -->
+        {frontmatter?.title && (
+          <header class="mb-8">
+            <h1 class="text-3xl font-bold border-b border-gray-200 pb-3 mb-4">
+              {frontmatter.title}
+            </h1>
+            {frontmatter?.description && (
+              <p class="text-gray-600">{frontmatter.description}</p>
+            )}
+          </header>
+        )}
 
-      <slot />
-    </main>
+        <slot />
+      </main>
 
-    <!-- Jobb oldali tartalomjegyzék -->
-    <aside class="hidden lg:block fixed right-0 h-full w-64 border-l bg-white shadow-sm overflow-y-auto py-6">
-      <TocNav />
-    </aside>
+      <!-- Jobb oldali tartalomjegyzék -->
+      <aside class="hidden lg:block w-64 border-l bg-white shadow-sm flex-shrink-0">
+        <div class="sticky top-0 h-screen overflow-y-auto py-6">
+          <TocNav />
+        </div>
+      </aside>
 
-    <!-- Lábléc -->
-    <footer class="w-full bg-gray-100 text-sm p-4 lg:hidden">
-      <p>{footer.address}</p>
-      <p>
-        Email: <a href={`mailto:${footer.email}`} class="text-blue-600 hover:underline">{footer.email}</a>
-      </p>
-    </footer>
+      <!-- Lábléc -->
+      <footer class="w-full bg-gray-100 text-sm p-4 lg:hidden">
+        <p>{footer.address}</p>
+        <p>
+          Email: <a href={`mailto:${footer.email}`} class="text-blue-600 hover:underline">{footer.email}</a>
+        </p>
+      </footer>
+    </div>
   </body>
 </html>

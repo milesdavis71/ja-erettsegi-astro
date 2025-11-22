@@ -1,0 +1,37 @@
+news:
+  - id: 1
+    title: "Új érettségi felkészítő tanfolyam indul"
+    date: "2024-01-15"
+    excerpt: "Januárban új érettségi felkészítő tanfolyamot indítunk matematikából és magyar nyelv és irodalomból."
+    image: "https://via.placeholder.com/400x200?text=Tanfolyam"
+    category: "Tanfolyamok"
+  - id: 2
+    title: "Online tanulási platform elérhető"
+    date: "2024-01-10"
+    excerpt: "Új online tanulási platformunk elérhetővé vált, ahol a tanfolyamok résztvevői hozzáférhetnek a tananyagokhoz."
+    image: "https://via.placeholder.com/400x200?text=Platform"
+    category: "Technológia"
+  - id: 3
+    title: "Sikeres érettségi eredmények"
+    date: "2024-01-05"
+    excerpt: "A tavalyi érettségi felkészítő tanfolyamaink résztvevői kiváló eredményeket értek el."
+    image: "https://via.placeholder.com/400x200?text=Eredmények"
+    category: "Eredmények"
+  - id: 4
+    title: "Új oktató csatlakozott csapatunkhoz"
+    date: "2023-12-20"
+    excerpt: "Dr. Kovács Péter, aki több mint 15 éves tapasztalattal rendelkezik, csatlakozott oktatói csapatunkhoz."
+    image: "https://via.placeholder.com/400x200?text=Oktató"
+    category: "Csapat"
+  - id: 5
+    title: "Tavaszi félév tanfolyamok bejelentése"
+    date: "2023-12-15"
+    excerpt: "A tavaszi félév tanfolyamainak időpontjai és témái bejelentésre kerültek."
+    image: "https://via.placeholder.com/400x200?text=Tavaszi"
+    category: "Tanfolyamok"
+  - id: 6
+    title: "Diákok visszajelzései"
+    date: "2023-12-10"
+    excerpt: "A tanfolyamok résztvevői pozitív visszajelzéseket adtak a tananyagokról és az oktatók munkájáról."
+    image: "https://via.placeholder.com/400x200?text=Visszajelzés"
+    category: "Visszajelzések"
