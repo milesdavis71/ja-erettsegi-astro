@@ -11,7 +11,7 @@ const featuredNews = news.slice(0, 3)
   <!-- Hírek szekció -->
   <section id="news" class="py-12 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold mb-8 text-center">Hírek</h2>
+      <h2 id="hirek" class="text-3xl font-bold mb-8 text-center">Hírek</h2>
       
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {featuredNews.map((item) => (
@@ -53,23 +53,23 @@ const featuredNews = news.slice(0, 3)
   </section>
 
   <section id="intro" class="min-h-screen py-12">
-    <h1 class="mb-4 text-3xl font-bold">Bevezetés</h1>
+    <h1 id="bevezetes" class="mb-4 text-3xl font-bold">Bevezetés</h1>
     <p class="max-w-2xl">Ez az Astro + Tailwind + Alpine alapú reszponzív layout...</p>
   </section>
 
   
   <section id="section1" class="min-h-screen py-12">
-    <h2 class="mb-4 text-2xl font-semibold">Fejezet 1</h2>
+    <h2 id="fejezet-1" class="mb-4 text-2xl font-semibold">Fejezet 1</h2>
     <p class="max-w-2xl">A fő tartalmi rész itt jelenik meg...</p>
   </section>
 
   <section id="section2" class="min-h-screen py-12">
-    <h2 class="mb-4 text-2xl font-semibold">Fejezet 2</h2>
+    <h2 id="fejezet-2" class="mb-4 text-2xl font-semibold">Fejezet 2</h2>
     <p class="max-w-2xl">Scroll közben a jobb oldali navigáció követi a szekciókat.</p>
   </section>
 
   <section id="section3" class="min-h-screen py-12">
-    <h2 class="mb-4 text-2xl font-semibold">Kapcsolat</h2>
+    <h2 id="kapcsolat" class="mb-4 text-2xl font-semibold">Kapcsolat</h2>
     <p class="max-w-2xl">Itt jönne a footer vagy a kapcsolat űrlap.</p>
   </section>
 </DefaultLayout>
