@@ -7,7 +7,7 @@ menu:
     url: /erettsegi-felkeszito-tanfolyamok-tanarai
   - id: section2
     label: Tantermi érettségi felkészítő tanfolyamok órarendje
-    url: /mentorok
+    url: /tantermi-erettsegi-felkeszíto-tanfolyamok-orarendje
   - id: section3
     label: Kapcsolat
     url: /kapcsolat
