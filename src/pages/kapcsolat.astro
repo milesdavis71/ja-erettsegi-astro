@@ -1,27 +1,14 @@
 ---
+export const frontmatter = {
+  title: "Kapcsolat",
+  description: "Lépj kapcsolatba velünk bármelyik csatornán",
+  sidebarNewsCount: 3,
+};
+
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 ---
 
-<DefaultLayout>
+<DefaultLayout {frontmatter}>
 
-  <section id="intro" class="min-h-screen py-12">
-    <h1 id="bevezetes" class="mb-4 text-3xl font-bold">Bevezetés</h1>
-    <p class="max-w-2xl">Ez az Astro + Tailwind + Alpine alapú reszponzív layout...</p>
-  </section>
-
-  
-  <section id="section1" class="min-h-screen py-12">
-    <h2 id="fejezet-1" class="mb-4 text-2xl font-semibold">Fejezet 1</h2>
-    <p class="max-w-2xl">A fő tartalmi rész itt jelenik meg...</p>
-  </section>
-
-  <section id="section2" class="min-h-screen py-12">
-    <h2 id="fejezet-2" class="mb-4 text-2xl font-semibold">Fejezet 2</h2>
-    <p class="max-w-2xl">Scroll közben a jobb oldali navigáció követi a szekciókat.</p>
-  </section>
-
-  <section id="section3" class="min-h-screen py-12">
-    <h2 id="kapcsolat" class="mb-4 text-2xl font-semibold">Kapcsolat</h2>
-    <p class="max-w-2xl">Itt jönne a footer vagy a kapcsolat űrlap.</p>
-  </section>
+ 
 </DefaultLayout>

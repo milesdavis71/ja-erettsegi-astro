@@ -1,0 +1,67 @@
+---
+type Variant = "grid" | "stack";
+
+interface NewsItem {
+  id: number;
+  title: string;
+  date: string;
+  excerpt: string;
+  image: string;
+  category: string;
+}
+
+interface Props {
+  items: NewsItem[];
+  variant?: Variant;
+  columns?: string;
+}
+
+const {
+  items = [],
+  variant = "grid",
+  columns = "grid-cols-1 md:grid-cols-3",
+}: Props = Astro.props;
+
+const isStack = variant === "stack";
+const wrapperClass = isStack ? "flex flex-col gap-4" : `grid ${columns} gap-6`;
+const imageHeight = isStack ? "h-28" : "h-32 sm:h-40 md:h-48";
+const excerptClass = isStack ? "hidden" : "text-gray-600 text-sm line-clamp-3 hidden md:block";
+const indicatorClass = isStack ? "mt-4 h-1 w-16 rounded-full bg-blue-100" : "mt-4 h-1 w-16 rounded-full bg-blue-100 md:hidden";
+---
+
+<div class={wrapperClass}>
+  {items.map((item) => (
+    <article class={`bg-white rounded-lg overflow-hidden transition-shadow duration-300 ${isStack ? "border border-gray-200 shadow-sm hover:shadow-md" : "shadow-md hover:shadow-lg"}`}>
+      <div class={`relative ${imageHeight} bg-gray-200 overflow-hidden`}>
+        <img
+          src={item.image}
+          alt={item.title}
+          class="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+      <div class="p-6">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-xs font-semibold text-blue-600 uppercase tracking-wide">
+            {item.category}
+          </span>
+          <time class="text-xs text-gray-500">
+            {new Date(item.date).toLocaleDateString("hu-HU", {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </time>
+        </div>
+        <h3 class="text-lg font-semibold mb-2 text-gray-900 line-clamp-2">
+          {item.title}
+        </h3>
+        <p class={excerptClass}>
+          {item.excerpt}
+        </p>
+        <div class={indicatorClass}></div>
+      </div>
+    </article>
+  ))}
+</div>
+

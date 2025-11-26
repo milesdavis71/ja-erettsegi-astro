@@ -1,4 +1,5 @@
 ---
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
 import authorsData from '../../data/authors.json'
 
 export async function getStaticPaths() {
@@ -11,8 +12,17 @@ export async function getStaticPaths() {
 
 const { author } = Astro.params
 const authorData = authorsData[author] || { bio: 'No info available.', age: 'N/A' }
+const frontmatter = {
+  title: `Szerző: ${author}`,
+  description: authorData.bio,
+  sidebarNewsCount: 1,
+}
 ---
 
-<h1>{author}</h1>
-<p>{authorData.bio}</p>
-<p>Age: {authorData.age}</p>
+<DefaultLayout {frontmatter}>
+  <section class="py-12">
+    <h1 class="text-3xl font-bold mb-4">{author}</h1>
+    <p class="text-gray-700 mb-4">{authorData.bio}</p>
+    <p class="text-gray-600 text-sm">Életkor: {authorData.age}</p>
+  </section>
+</DefaultLayout>

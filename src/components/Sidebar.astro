@@ -1,30 +1,28 @@
 ---
-const { menu } = Astro.props; // a DefaultLayout-ból érkezik
+const { menu, customClass = "" } = Astro.props; // a DefaultLayout-ból érkezik
 const currentUrl = Astro.url.pathname; // aktuális oldal URL-je
 ---
 
-<aside class="w-full lg:w-64 bg-white shadow-sm">
-  <nav class="p-4">
-    <ul class="space-y-1">
-      {
-        menu.map((item: any) => {
-          const isActive = currentUrl === item.url || currentUrl.startsWith(item.url + "/");
-          return (
-            <li>
-              <a
-                href={item.url}
-                class={`block px-4 py-2 rounded-md transition-colors duration-150 ${
-                  isActive
-                    ? "bg-blue-100 text-blue-700 font-semibold"
-                    : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
-                }`}
-              >
-                {item.label}
-              </a>
-            </li>
-          );
-        })
-      }
-    </ul>
-  </nav>
-</aside>
+<nav class={`p-4 ${customClass}`} aria-label="Fő navigáció">
+  <ul class="space-y-1">
+    {
+      menu.map((item: any) => {
+        const isActive = currentUrl === item.url || currentUrl.startsWith(item.url + "/");
+        return (
+          <li>
+            <a
+              href={item.url}
+              class={`block px-4 py-2 rounded-md transition-colors duration-150 ${
+                isActive
+                  ? "bg-blue-100 text-blue-700 font-semibold"
+                  : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              }`}
+            >
+              {item.label}
+            </a>
+          </li>
+        );
+      })
+    }
+  </ul>
+</nav>

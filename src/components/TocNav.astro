@@ -1,4 +1,11 @@
 ---
+const { variant = "desktop" } = Astro.props;
+const baseClasses = "flex flex-col";
+const isMobile = variant === "mobile";
+const containerClass = isMobile
+  ? `${baseClasses} px-4 py-2 gap-4`
+  : `${baseClasses} h-full px-6`;
+const listClass = isMobile ? "space-y-2 text-base" : "space-y-2 text-sm";
 /**
  * A TocNav automatikusan kiemeli az éppen látható szakaszt
  * (pl. <section id="intro"> vagy <h2 id="section1"> alapján).
@@ -44,11 +51,11 @@
       onScroll();
     }
   }"
-  class="h-full flex flex-col px-6"
+  class={containerClass}
 >
-  <h2 class="text-lg font-semibold mb-4">Tartalomjegyzék</h2>
+  <h2 class={`text-lg font-semibold mb-4 ${isMobile ? "px-1" : ""}`}>Tartalomjegyzék</h2>
   <nav>
-    <ul class="space-y-2 text-sm">
+    <ul class={listClass}>
       <template x-for="link in headings" :key="link.id">
         <li>
           <a
