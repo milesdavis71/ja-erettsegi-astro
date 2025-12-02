@@ -10,6 +10,8 @@ sidebarNewsCount: 3
 
 ![Első hír kép](https://placehold.co/600x300?text=1.+minta)
 
+![Teszt fájl](https://placehold.co/600x300?text=teszt+f%C3%A1jl)
+
 # Első minta hír: Új tanfolyam indul!
 
 Itt kezdődik az első hír tartalma.
@@ -19,3 +21,4 @@ Itt kezdődik az első hír tartalma.
 - Főbb témák: Matematika, magyar
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
