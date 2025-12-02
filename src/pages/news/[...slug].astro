@@ -1,0 +1,30 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import NewsCards from '../../components/NewsCards.astro';
+import global from '../../data/global.yml';
+import newsData from '../../data/news.yml';
+export const prerender = false;
+const { frontmatter } = Astro.props;
+const { menu } = global;
+const { news } = newsData;
+const sidebarNews = news.slice(0, frontmatter?.sidebarNewsCount ?? 3);
+---
+
+<DefaultLayout frontmatter={frontmatter}>
+  <div class="flex flex-col lg:flex-row gap-0">
+    <!-- Bal oldali menü -->
+    <aside class="hidden lg:block w-64 border-r bg-white shadow-sm flex-shrink-0">
+      <Sidebar menu={menu} />
+    </aside>
+    <!-- Fő markdown blokk (csak középen, max-w-2xl) -->
+    <main class="flex-1 max-w-2xl mx-auto w-full px-4 sm:px-6 py-6">
+      <slot />
+    </main>
+    <!-- Jobb oldali hírek (csak xl+) -->
+    <aside class="hidden xl:block w-80 border-l bg-white shadow-sm flex-shrink-0 mt-0">
+      <h2 class="text-lg font-semibold text-gray-900 mb-2">Friss hírek</h2>
+      <NewsCards items={sidebarNews} variant="stack" />
+    </aside>
+  </div>
+</DefaultLayout>
