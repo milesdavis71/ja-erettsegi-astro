@@ -1,10 +1,30 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro';
-export const prerender = false;
 
-const { frontmatter } = Astro.props;
+// A híroldalak statikusan generálódjanak a markdown fájlokból
+export async function getStaticPaths() {
+  // Betöltjük az összes .md hírfájlt a news mappából
+  const posts = await Astro.glob('./*.md');
+
+  return posts.map((post) => {
+    // Astro.glob url pl.: /news/elso-minta-hir
+    const slug = post.url.replace('/news/', '').replace(/\/$/, '');
+
+    return {
+      params: { slug: [slug] },
+      props: {
+        Content: post.default,
+        frontmatter: post.frontmatter,
+      },
+    };
+  });
+}
+
+const { Content, frontmatter } = Astro.props;
 ---
 
 <DefaultLayout frontmatter={frontmatter}>
-  <slot />
+  <article class="prose max-w-none">
+    <Content />
+  </article>
 </DefaultLayout>
