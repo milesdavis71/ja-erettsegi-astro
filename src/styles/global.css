@@ -1,5 +1,36 @@
 @import "tailwindcss";
-
+@layer base {
+	/* MINDIG zárd ki a .prose-t, ha nem akarod felülírni a plugin stílusait */
+  
+	:not(.prose) h1 {
+	  @apply text-3xl font-bold;
+	}
+	:not(.prose) h2 {
+	  @apply text-2xl font-bold;
+	}
+	:not(.prose) h3 {
+	  @apply text-xl font-bold;
+	}
+	:not(.prose) h4 {
+	  @apply text-lg font-bold;
+	}
+	:not(.prose) h5 {
+	  @apply text-base font-bold;
+	}
+	:not(.prose) h6 {
+	  @apply text-sm font-bold;
+	}
+  
+	:not(.prose) p {
+	  @apply text-base leading-relaxed;
+	}
+  
+	:not(.prose) ul {
+	  @apply list-disc pl-6;
+	}
+  
+	/* stb. */
+  }
 [x-cloak] {
 	display: none !important;
 }

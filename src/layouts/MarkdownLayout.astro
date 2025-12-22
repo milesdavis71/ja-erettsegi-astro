@@ -1,0 +1,209 @@
+---
+import "../styles/global.css";
+import Sidebar from "../components/Sidebar.astro";
+import TocNav from "../components/TocNav.astro";
+import NewsCards from "../components/NewsCards.astro";
+import global from "../data/global.yml";
+import newsData from "../data/news.yml";
+
+const { frontmatter } = Astro.props;
+const { site, menu, footer } = global;
+const { news } = newsData;
+const currentPath = Astro.url.pathname;
+const isIndexPage = currentPath === "/";
+const showToc = isIndexPage;
+const sidebarNewsCount = frontmatter?.sidebarNewsCount ?? (isIndexPage ? 0 : 3);
+const sidebarNews = showToc ? [] : news.slice(0, sidebarNewsCount);
+const showNewsSidebar = !showToc && sidebarNews.length > 0;
+---
+
+<html lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{frontmatter?.title ? `${frontmatter.title} – ${site.title}` : site.title}</title>
+    <meta name="description" content={frontmatter?.description || site.description} />
+  </head>
+
+  <body
+    class="bg-gray-100 text-gray-800 min-h-screen"
+    x-data="{ sidebarOpen: false, tocOpen: false }"
+    :class="{ 'overflow-hidden': sidebarOpen || tocOpen }"
+    @keydown.window.escape="sidebarOpen = false; tocOpen = false"
+  >
+    <!-- Mobil felső sáv -->
+    <div class="lg:hidden bg-white border-b border-gray-200 sticky top-0 z-30 shadow-sm">
+      <div class="max-w-[1440px] mx-auto px-4 py-3 flex items-center justify-between gap-3">
+        <button
+          type="button"
+          class="inline-flex items-center gap-2 rounded-md border border-gray-300 px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+          aria-controls="mobile-menu"
+          :aria-expanded="sidebarOpen"
+          @click="sidebarOpen = true; tocOpen = false"
+        >
+          <svg class="h-5 w-5 text-gray-800" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16" />
+          </svg>
+          <span>Menü</span>
+        </button>
+        <div class="text-base font-semibold text-gray-900 text-center flex-1">{site.title}</div>
+        {showToc ? (
+          <button
+            type="button"
+            class="inline-flex items-center gap-2 rounded-md border border-gray-300 px-3 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+            aria-controls="mobile-toc"
+            :aria-expanded="tocOpen"
+            @click="tocOpen = true; sidebarOpen = false"
+          >
+            <svg class="h-5 w-5 text-gray-800" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 7h14M5 12h9M5 17h6" />
+            </svg>
+            <span>Tartalom</span>
+          </button>
+        ) : (
+          <div class="w-[84px]"></div>
+        )}
+      </div>
+    </div>
+
+    <!-- Mobil átfedések -->
+    <div
+      class="lg:hidden fixed inset-0 bg-slate-900/40 z-40"
+      x-show="sidebarOpen || tocOpen"
+      x-transition.opacity
+      x-cloak
+      @click="sidebarOpen = false; tocOpen = false"
+    ></div>
+
+    <section
+      id="mobile-menu"
+      class="lg:hidden fixed inset-y-0 left-0 z-50 w-72 max-w-[85%] bg-white shadow-xl transform"
+      x-show="sidebarOpen"
+      x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="-translate-x-full"
+      x-transition:enter-end="translate-x-0"
+      x-transition:leave="transition ease-in duration-200"
+      x-transition:leave-start="translate-x-0"
+      x-transition:leave-end="-translate-x-full"
+      x-cloak
+      role="dialog"
+      aria-modal="true"
+      aria-label="Mobil menü"
+    >
+      <div class="flex items-center justify-between px-4 py-3 border-b border-gray-200">
+        <p class="text-base font-semibold text-gray-900">Navigáció</p>
+        <button
+          type="button"
+          class="text-sm font-medium text-gray-600 hover:text-gray-900"
+          @click="sidebarOpen = false"
+        >
+          Bezár
+        </button>
+      </div>
+      <div class="h-full overflow-y-auto" @click="$event.target.closest('a') && (sidebarOpen = false)">
+        <Sidebar menu={menu} customClass="text-base" />
+      </div>
+    </section>
+
+    {showToc && (
+      <section
+        id="mobile-toc"
+        class="lg:hidden fixed inset-x-0 bottom-0 z-50 max-h-[80vh] bg-white shadow-2xl rounded-t-2xl transform"
+        x-show="tocOpen"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="translate-y-full"
+        x-transition:enter-end="translate-y-0"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="translate-y-0"
+        x-transition:leave-end="translate-y-full"
+        x-cloak
+        role="dialog"
+        aria-modal="true"
+        aria-label="Tartalomjegyzék"
+      >
+        <div class="flex items-center justify-between px-5 py-4 border-b border-gray-200">
+          <p class="text-base font-semibold text-gray-900">Tartalomjegyzék</p>
+          <button
+            type="button"
+            class="text-sm font-medium text-gray-600 hover:text-gray-900"
+            @click="tocOpen = false"
+          >
+            Bezár
+          </button>
+        </div>
+        <div class="overflow-y-auto max-h-[70vh]" @click="$event.target.closest('a') && (tocOpen = false)">
+          <TocNav variant="mobile" />
+        </div>
+      </section>
+    )}
+
+    <!-- Fő konténer - max 1440px, középre igazítva -->
+    <div class="max-w-[1440px] mx-auto bg-white min-h-screen flex flex-col lg:flex-row relative">
+      <!-- Bal oldali menü -->
+      <aside class="hidden lg:flex w-64 border-r bg-white shadow-sm flex-shrink-0">
+        <div class="sticky top-0 h-screen overflow-y-auto overflow-x-hidden" style="scrollbar-width: thin; scrollbar-color: rgb(203 213 225) transparent;">
+          <Sidebar menu={menu} />
+        </div>
+      </aside>
+
+      <!-- Központi tartalom -->
+      <main class="flex-1 w-full px-4 sm:px-6 py-6">
+        <!-- Oldalcím -->
+        {frontmatter?.title && (
+          <header class="mb-8">
+            <h1 class="text-3xl font-bold border-b border-gray-200 pb-3 mb-4">
+              {frontmatter.title}
+            </h1>
+            {frontmatter?.description && (
+              <p class="text-gray-600">{frontmatter.description}</p>
+            )}
+          </header>
+        )}
+      <article class="prose prose-slate dark:prose-invert">
+        <slot />
+        </article>
+      </main>
+
+      <!-- Jobb oldali tartalom -->
+      {showToc ? (
+        <aside class="hidden lg:block w-64 border-l bg-white shadow-sm flex-shrink-0">
+          <div class="sticky top-0 h-screen overflow-y-auto py-6">
+            <TocNav />
+          </div>
+        </aside>
+      ) : showNewsSidebar ? (
+        <aside class="hidden lg:block w-72 border-l bg-white shadow-sm flex-shrink-0">
+          <div class="sticky top-0 h-screen overflow-y-auto py-6 px-5">
+            <div class="mb-4">
+              <h2 class="text-lg font-semibold text-gray-900">Friss hírek</h2>
+              <p class="text-sm text-gray-500">Legfontosabb bejelentések</p>
+            </div>
+            <NewsCards items={sidebarNews} variant="stack" />
+          </div>
+        </aside>
+      ) : null}
+
+      {showNewsSidebar && (
+        <section class="lg:hidden px-4 sm:px-6 pb-4">
+          <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 mb-4">
+            <h2 class="text-lg font-semibold text-gray-900 mb-1">Friss hírek</h2>
+            <p class="text-sm text-gray-500">Legfontosabb bejelentések</p>
+          </div>
+          <NewsCards items={sidebarNews} variant="grid" columns="grid-cols-1 sm:grid-cols-2" />
+        </section>
+      )}
+
+      <!-- Lábléc -->
+      <footer class="w-full bg-gray-100 text-sm p-4 lg:hidden border-t border-gray-200">
+        <p>{footer.address}</p>
+        <p>
+          Email: <a href={`mailto:${footer.email}`} class="text-blue-600 hover:underline">{footer.email}</a>
+        </p>
+      </footer>
+    </div>
+    
+    <script>
+      import '../scripts/alpine.js';
+    </script>
+  </body>
+</html>

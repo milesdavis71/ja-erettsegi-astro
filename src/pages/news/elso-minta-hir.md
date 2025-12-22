@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownLayout.astro
 title: "Első minta hír: Új tanfolyam indul!"
 date: "2025-02-01"
 category: "Tanfolyamok"
@@ -16,7 +17,7 @@ sidebarNewsCount: 3
 
 Itt kezdődik az első hír tartalma.
 
-- **Indul egy új tanfolyam!**
+- Indul egy új tanfolyam!
 - Regisztráció nyitott
 - Főbb témák: Matematika, magyar
 
