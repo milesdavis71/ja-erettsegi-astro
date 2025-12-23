@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownLayout.astro
 title: "Harmadik hír: Kiváló érettségi eredmények!"
 date: "2024-11-15"
 category: "Eredmények"

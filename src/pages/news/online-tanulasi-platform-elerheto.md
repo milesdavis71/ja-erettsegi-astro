@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownLayout.astro
 title: "Második mintahír: Platform fejlesztés!"
 date: "2024-12-28"
 category: "Technológia"
