@@ -4,7 +4,7 @@ const currentUrl = Astro.url.pathname; // aktuális oldal URL-je
 ---
 
 <nav class={`p-4 ${customClass}`} aria-label="Fő navigáció">
-  <ul class="space-y-1">
+  <ul class="space-y-1 list-none pl-0">
     {
       menu.map((item: any) => {
         const isActive = currentUrl === item.url || currentUrl.startsWith(item.url + "/");
