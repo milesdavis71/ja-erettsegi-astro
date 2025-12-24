@@ -1,21 +1,15 @@
 ---
 import "../styles/global.css";
 import global from "../data/global.yml";
-import newsData from "../data/news.yml";
 import MainContent from "../components/MainContent.astro";
 import HeaderSection from "../components/HeaderSection.astro";
 import DesktopLeftSidebar from "../components/DesktopLeftSidebar.astro";
-import ContextualColumn from "../components/ContextualColumn.astro";
 
 const { frontmatter } = Astro.props;
 const { site } = global;
-const { news } = newsData;
-const currentPath = Astro.url.pathname;
-const isIndexPage = currentPath === "/";
-const showToc = isIndexPage;
-const sidebarNewsCount = frontmatter?.sidebarNewsCount ?? (isIndexPage ? 0 : 3);
-const sidebarNews = showToc ? [] : news.slice(0, sidebarNewsCount);
-const showNewsSidebar = !showToc && sidebarNews.length > 0;
+
+// This layout doesn't have the contextual right column, so TOC is never shown there.
+const showToc = false;
 ---
 
 <html lang="hu">
@@ -42,7 +36,7 @@ const showNewsSidebar = !showToc && sidebarNews.length > 0;
         <slot />
       </MainContent>
 
-      <ContextualColumn {showToc} {showNewsSidebar} {sidebarNews} />
+      <!-- No right column in this layout -->
     </div>
     
     <script>

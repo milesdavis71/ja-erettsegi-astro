@@ -1,5 +1,5 @@
 ---
-import Sidebar from "../components/Sidebar.astro";
+import NavigationMenu from "./NavigationMenu.astro";
 import global from "../data/global.yml";
 
 const { menu } = global;
@@ -7,6 +7,6 @@ const { menu } = global;
 
 <aside class="hidden lg:flex w-64 border-r bg-white shadow-sm flex-shrink-0">
   <div class="sticky top-0 h-screen overflow-y-auto overflow-x-hidden" style="scrollbar-width: thin; scrollbar-color: rgb(203 213 225) transparent;">
-    <Sidebar menu={menu} />
+    <NavigationMenu menu={menu} />
   </div>
 </aside>
