@@ -5,7 +5,7 @@ const { frontmatter } = Astro.props;
   <!-- Page Title -->
   {frontmatter?.title && (
     <header class="mb-8">
-      <h1 class="text-3xl font-bold border-b border-gray-200 pb-3 mb-4">
+      <h1 class="text-xl font-bold border-b border-gray-200 pb-3 mb-4">
         {frontmatter.title}
       </h1>
       {frontmatter?.description && (
