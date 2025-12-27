@@ -3,6 +3,7 @@ import DefaultLayout from '../layouts/DefaultLayout.astro'
 import newsData from '../data/news.yml'
 import NewsCards from '../components/NewsCards.astro';
 import emeltSzintuErettsegi from '../assets/images/emelt-szintu-erettsegi-felkeszito-tanfolyam.jpg';
+import Example from '../components/example.md';
 
 export const frontmatter = {
   title: "Emelt szintű érettségire felkészítő tanfolyamok",
@@ -30,9 +31,9 @@ const featuredNews = news.slice(0, 3)
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
-               <p class="mt-4 text-lg text-gray-500">Egyetemre készülsz? Szeretnél minél jobb felvételi eredményt elérni? Megalapoznád egyetemi tanulmányaidat? Felvételi pontokat gyűjtenél?
+               <p class="mt-4">Egyetemre készülsz? Szeretnél minél jobb felvételi eredményt elérni? Megalapoznád egyetemi tanulmányaidat? Felvételi pontokat gyűjtenél?
                </p>
-               <p class="mt-4 text-lg text-gray-500">
+               <p class="mt-4">
                 Kerülj egy lépéssel közelebb az egyetemhez és jelentkezz emelt szintű érettségire felkészítő tanfolyamainkra! Segítünk a továbbtanulásban!</p>
         </div>
         <div>
@@ -42,7 +43,7 @@ const featuredNews = news.slice(0, 3)
     </div>
   </section>
 
-  <section class="text-center">
+  <section class="py-4 text-center">
     <a href="/dokumentumok/emelt_szintu_eretts_felkeszit_tanfolyamok_szabalyzat_2025.pdf" 
        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
        target="_blank"
@@ -54,6 +55,9 @@ const featuredNews = news.slice(0, 3)
   <section id="intro" class="min-h-screen py-12">
     <h2 id="bevezetes" class="mb-4 text-2xl font-bold">A tanfolyamokról</h2>
     <p class="max-w-2xl">Ez az Astro + Tailwind + Alpine alapú reszponzív layout...</p>
+    <div class="prose mt-8">
+      <Example />
+    </div>
   </section>
 
   
