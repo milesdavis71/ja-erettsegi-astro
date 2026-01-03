@@ -25,30 +25,26 @@ const listClass = isMobile ? "list-none pl-0 space-y-2 text-base" : "list-none p
       }));
       
       const onScroll = () => {
-        let current = '';
-        let minDistance = Infinity;
-        
-        this.headings.forEach((item) => {
-          const element = document.getElementById(item.id);
-          if (element) {
-            const rect = element.getBoundingClientRect();
-            const distance = Math.abs(rect.top - 150);
-            
-            // Ha a cím látható a képernyőn (a teteje 150px alatt van)
-            if (rect.top <= 200 && rect.bottom >= 50) {
-              if (distance < minDistance) {
-                minDistance = distance;
-                current = item.id;
-              }
-            }
-          }
+        let currentId = '';
+        const topThreshold = 150; // A viewport tetejétől számított 150px-es vonal
+
+        // Szűrjük azokat a címsorokat, amelyek már a küszöbérték fölött vannak
+        const headingsAboveThreshold = this.headings.filter(h => {
+            const element = document.getElementById(h.id);
+            if (!element) return false;
+            return element.getBoundingClientRect().top < topThreshold;
         });
-        
-        this.activeId = current;
+
+        // Az aktív címsor az utolsó, amelyik áthaladt a küszöbön
+        if (headingsAboveThreshold.length > 0) {
+            currentId = headingsAboveThreshold[headingsAboveThreshold.length - 1].id;
+        }
+
+        this.activeId = currentId;
       };
       
       window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
+      onScroll(); // Kezdő állapot beállítása
     }
   }"
   class={containerClass}
@@ -60,7 +56,8 @@ const listClass = isMobile ? "list-none pl-0 space-y-2 text-base" : "list-none p
         <li>
           <a
             :href="'#' + link.id"
-            :class="activeId === link.id ? 'block pl-3 border-l-4 border-blue-600 text-blue-700 font-semibold transition' : 'block pl-3 border-l-4 border-transparent text-gray-700 hover:text-blue-600 hover:border-blue-200 transition'"
+            :class="activeId === link.id ? 'block pl-3 border-l-4 font-semibold transition' : 'block pl-3 border-l-4 border-transparent text-gray-700 hover:text-blue-600 hover:border-blue-200 transition'"
+            :style="activeId === link.id ? { color: 'var(--link-base-color)', borderColor: 'var(--link-base-color)' } : {}"
             x-text="link.label"
           ></a>
         </li>

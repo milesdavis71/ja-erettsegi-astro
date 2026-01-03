@@ -3,7 +3,7 @@ import DefaultLayout from '../layouts/DefaultLayout.astro'
 import newsData from '../data/news.yml'
 import NewsCards from '../components/NewsCards.astro';
 import emeltSzintuErettsegi from '../assets/images/emelt-szintu-erettsegi-felkeszito-tanfolyam.jpg';
-import Example from '../components/example.md';
+import Tanfolyamokrol from '../components/tanfolyamokrol.md';
 
 export const frontmatter = {
   title: "Emelt szintű érettségire felkészítő tanfolyamok",
@@ -21,7 +21,7 @@ const featuredNews = news.slice(0, 3)
   <!-- Hírek szekció -->
   <section id="news" class="py-4 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 id="hirek" class="text-2xl font-bold mb-4 text-center">Hírek</h2>
+      <h2 id="hirek" class="text-center">Hírek</h2>
       
       <NewsCards items={featuredNews} />
     </div>
@@ -31,9 +31,9 @@ const featuredNews = news.slice(0, 3)
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div>
-               <p class="mt-4">Egyetemre készülsz? Szeretnél minél jobb felvételi eredményt elérni? Megalapoznád egyetemi tanulmányaidat? Felvételi pontokat gyűjtenél?
+               <p>Egyetemre készülsz? Szeretnél minél jobb felvételi eredményt elérni? Megalapoznád egyetemi tanulmányaidat? Felvételi pontokat gyűjtenél?
                </p>
-               <p class="mt-4">
+               <p>
                 Kerülj egy lépéssel közelebb az egyetemhez és jelentkezz emelt szintű érettségire felkészítő tanfolyamainkra! Segítünk a továbbtanulásban!</p>
         </div>
         <div>
@@ -43,36 +43,36 @@ const featuredNews = news.slice(0, 3)
     </div>
   </section>
 
-  <section class="py-4 text-center">
+  <section class="-mt-8 pb-4 text-center">
+    <p class="mb-2 sm:mb-6 text-gray-600">Kérjük, tanulmányozd át a tanfolyam szabályzatát:</p>
     <a href="/dokumentumok/emelt_szintu_eretts_felkeszit_tanfolyamok_szabalyzat_2025.pdf" 
-       class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+       class="btn"
        target="_blank"
        rel="noopener noreferrer">
       Tanfolyam Szabályzat
     </a>
   </section>
 
-  <section id="intro" class="min-h-screen py-12">
-    <h2 id="bevezetes" class="mb-4 text-2xl font-bold">A tanfolyamokról</h2>
-    <p class="max-w-2xl">Ez az Astro + Tailwind + Alpine alapú reszponzív layout...</p>
-    <div class="prose mt-8">
-      <Example />
+  <section id="intro" class="py-12">
+    <h2 id="bevezetes">A tanfolyamokról</h2>
+    <div class="prose">
+      <Tanfolyamokrol />
     </div>
   </section>
 
   
-  <section id="section1" class="min-h-screen py-12">
-    <h2 id="fejezet-1" class="mb-4 text-2xl font-semibold">Fejezet 1</h2>
+  <section id="section1" class="py-12">
+    <h2 id="fejezet-1">Fejezet 1</h2>
     <p class="max-w-2xl">A fő tartalmi rész itt jelenik meg...</p>
   </section>
 
-  <section id="section2" class="min-h-screen py-12">
-    <h2 id="fejezet-2" class="mb-4 text-2xl font-semibold">Fejezet 2</h2>
+  <section id="section2" class="py-12">
+    <h2 id="fejezet-2">Fejezet 2</h2>
     <p class="max-w-2xl">Scroll közben a jobb oldali navigáció követi a szekciókat.</p>
   </section>
 
-  <section id="section3" class="min-h-screen py-12">
-    <h2 id="kapcsolat" class="mb-4 text-2xl font-semibold">Kapcsolat</h2>
+  <section id="section3" class="py-12">
+    <h2 id="kapcsolat">Kapcsolat</h2>
     <p class="max-w-2xl">Itt jönne a footer vagy a kapcsolat űrlap.</p>
   </section>
 </DefaultLayout>
