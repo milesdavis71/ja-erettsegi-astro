@@ -7,69 +7,78 @@
     --button-hover-color: rgb(183, 6, 103); /* Darker hover color */
   }
 
-	/* MINDIG zárd ki a .prose-t, ha nem akarod felülírni a plugin stílusait */
-  
-	:not(.prose) h1 {
-	  @apply text-3xl font-bold mb-3;
-	}
-	:not(.prose) h2 {
-	  @apply text-2xl font-bold mb-3;
-	}
-	:not(.prose) h3 {
-	  @apply text-xl font-bold mb-2;
-	}
-	:not(.prose) h4 {
-	  @apply text-lg font-bold mb-2;
-	}
-	:not(.prose) h5 {
-	  @apply text-base font-bold mb-1;
-	}
-	:not(.prose) h6 {
-	  @apply text-sm font-bold mb-1;
-	}
-  
-	:not(.prose) p {
-	  @apply text-base leading-relaxed mb-2;
-	  @apply text-gray-700;
-	}
-  
-	:not(.prose) ul {
-	  @apply list-disc pl-6 mb-2;
-	  @apply text-gray-700;
-	}
+  /* MINDIG zárd ki a .prose-t, ha nem akarod felülírni a plugin stílusait */
 
-	:not(.prose) a {
-		color: var(--link-base-color);
-    text-decoration: none;
-	}
-
-	:not(.prose) a:not(.news-card-link):hover {
-		color: var(--link-hover-color);
-    text-decoration: underline;
-	}
-
-  :not(.prose) a:active,
-	:not(.prose) a:visited {
-		color: var(--link-hover-color);
-	}
-
-  .btn {
-    @apply inline-block rounded-md px-6 py-3 text-base font-semibold shadow-sm transition-colors duration-150;
-    background-color: var(--button-base-color);
-    color: white !important; /* Force text color to be white, overriding generic 'a' styles */
+  :not(.prose) h1 {
+    @apply text-3xl font-bold mb-3;
+  }
+  :not(.prose) h2 {
+    @apply text-2xl font-bold mb-3;
+  }
+  :not(.prose) h3 {
+    @apply text-xl font-bold mb-2;
+  }
+  :not(.prose) h4 {
+    @apply text-lg font-bold mb-2;
+  }
+  :not(.prose) h5 {
+    @apply text-base font-bold mb-1;
+  }
+  :not(.prose) h6 {
+    @apply text-sm font-bold mb-1;
   }
 
-  .btn:hover {
+  :not(.prose) p {
+    @apply text-base leading-relaxed mb-2;
+    @apply text-gray-700;
+  }
+
+  :not(.prose) ul {
+    @apply list-disc pl-6 mb-2;
+    @apply text-gray-700;
+  }
+
+  :not(.prose) a {
+    color: var(--link-base-color);
+    text-decoration: none;
+  }
+
+  :not(.prose) a:not(.news-card-link):not(.btn):hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+  }
+
+  :not(.prose) a:active,
+  :not(.prose) a:visited {
+    color: var(--link-hover-color);
+  }
+
+  /* --- BUTTON STYLES --- */
+  .btn {
+    @apply inline-block rounded-md px-6 py-3 text-base font-semibold shadow-sm transition-colors duration-150;
+    text-decoration: none !important;
+  }
+
+  .btn-primary {
+    background-color: var(--button-base-color);
+    color: white !important;
+  }
+
+  .btn-primary:hover {
     background-color: var(--button-hover-color);
   }
 
-  /* Prevent underline on link-buttons on hover */
-  a.btn:hover {
-    text-decoration: none;
+  .btn-secondary {
+    @apply bg-gray-200 text-gray-800;
   }
-  
-	/* stb. */
+
+  .btn-secondary:hover {
+    @apply bg-gray-300;
   }
+  /* --- END BUTTON STYLES --- */
+
+  /* stb. */
+}
 [x-cloak] {
-	display: none !important;
+  display: none !important;
 }

@@ -1,0 +1,26 @@
+---
+// src/components/Button.astro
+export interface Props {
+  text: string;
+  link: string;
+  target?: '_blank' | '_self' | '_parent' | '_top';
+  primary?: boolean;
+}
+
+const { text, link, target = '_self', primary = false } = Astro.props;
+
+// A 'primary' prop alapján választjuk ki a megfelelő stílusosztályt.
+// A .btn osztály mindkét esetben megmarad, mert az tartalmazza az alap stílusokat.
+const buttonClasses = primary
+  ? "btn btn-primary"   // Ha primary, akkor a rózsaszín stílust kapja
+  : "btn btn-secondary"; // Ha nem primary, akkor a szürke stílust
+---
+
+<a 
+  href={link} 
+  class={buttonClasses}
+  target={target}
+  rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+>
+  {text}
+</a>
