@@ -5,6 +5,7 @@ import NewsCards from '../components/NewsCards.astro';
 import emeltSzintuErettsegi from '../assets/images/emelt-szintu-erettsegi-felkeszito-tanfolyam.jpg';
 import Tanfolyamokrol from '../components/tanfolyamokrol.mdx';
 import Callout from '../components/Callout.astro';
+import Button from '../components/button.astro';
 
 export const frontmatter = {
   title: "Emelt szintű érettségire felkészítő tanfolyamok",
@@ -50,14 +51,25 @@ const featuredNews = news.slice(0, 3)
     </div>
   </section>
 
-  <section class="-mt-8 pb-4 text-center">
-    <p class="mb-2 sm:mb-6 text-gray-600">Kérjük, tanulmányozd át a tanfolyam szabályzatát:</p>
-    <a href="/dokumentumok/emelt_szintu_eretts_felkeszit_tanfolyamok_szabalyzat_2025.pdf" 
-       class="btn"
-       target="_blank"
-       rel="noopener noreferrer">
-      Tanfolyam Szabályzat
-    </a>
+  <section class="-mt-12 pb-4 text-center">
+    <p class="mt-8 mb-4 text-gray-600">Kérjük, tanulmányozd át a tanfolyam szabályzatát:</p>
+    <Button 
+      link="/dokumentumok/emelt_szintu_eretts_felkeszit_tanfolyamok_szabalyzat_2025.pdf" 
+      text="Tanfolyam Szabályzat"
+      target="_blank"
+    />
+    <hr class="mt-8 border-gray-200" />
+    <div class="mt-8 flex justify-center gap-4">
+      <Button 
+        link="/kapcsolat"
+        text="Jelentkezés"
+        primary
+      />
+      <Button 
+        link="#intro"
+        text="Részletek"
+      />
+    </div>
   </section>
 
   <section id="intro" class="py-12">
