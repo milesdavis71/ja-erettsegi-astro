@@ -1,5 +1,5 @@
 ---
-import Sidebar from "../components/DesktopLeftSidebar.astro";
+import NavigationMenu from "../components/NavigationMenu.astro";
 import TocNav from "../components/TocNav.astro";
 import global from "../data/global.yml";
 
@@ -77,7 +77,7 @@ const { showToc } = Astro.props;
     </button>
   </div>
   <div class="h-full overflow-y-auto" @click="$event.target.closest('a') && (sidebarOpen = false)">
-    <Sidebar menu={menu} customClass="text-base" />
+    <NavigationMenu menu={menu} customClass="text-base" />
   </div>
 </section>
 

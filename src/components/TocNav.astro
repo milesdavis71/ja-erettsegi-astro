@@ -56,7 +56,7 @@ const listClass = isMobile ? "list-none pl-0 space-y-2 text-base" : "list-none p
         <li>
           <a
             :href="'#' + link.id"
-            :class="activeId === link.id ? 'block pl-3 border-l-4 font-semibold transition' : 'block pl-3 border-l-4 border-transparent text-gray-700 hover:text-blue-600 hover:border-blue-200 transition'"
+            :class="activeId === link.id ? 'block pl-3 border-l-4 font-semibold transition no-underline' : 'block pl-3 border-l-4 border-transparent text-gray-700 hover:text-blue-600 hover:border-blue-200 transition no-underline'"
             :style="activeId === link.id ? { color: 'var(--link-base-color)', borderColor: 'var(--link-base-color)' } : {}"
             x-text="link.label"
           ></a>
