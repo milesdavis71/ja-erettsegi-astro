@@ -4,6 +4,7 @@ import newsData from '../data/news.yml'
 import NewsCards from '../components/NewsCards.astro';
 import emeltSzintuErettsegi from '../assets/images/emelt-szintu-erettsegi-felkeszito-tanfolyam.jpg';
 import Tanfolyamokrol from '../components/tanfolyamokrol.md';
+import Callout from '../components/Callout.astro';
 
 export const frontmatter = {
   title: "Emelt szintű érettségire felkészítő tanfolyamok",
@@ -26,6 +27,10 @@ const featuredNews = news.slice(0, 3)
       <NewsCards items={featuredNews} />
     </div>
   </section>
+
+  <Callout>
+    <p>Ez egy fontos üzenet, amit a callout komponensben jelenítek meg.</p>
+  </Callout>
 
   <section class="py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
