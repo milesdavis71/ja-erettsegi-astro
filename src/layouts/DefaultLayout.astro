@@ -25,7 +25,6 @@ const showNewsSidebar = !showToc && sidebarNews.length > 0
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{frontmatter?.title ? `${frontmatter.title} – ${site.title}` : site.title}</title>
     <meta name="description" content={frontmatter?.description || site.description} />
-    <link rel="stylesheet" href="/font-awesome/font-awesome/all.min.css" />
   </head>
 
   <body
@@ -52,10 +51,5 @@ const showNewsSidebar = !showToc && sidebarNews.length > 0
     <script>
       import '../scripts/alpine.js'
     </script>
-    <script src="/font-awesome/font-awesome-pro/solid.js" is:inline></script>
-    <script src="/font-awesome/font-awesome-pro/regular.js" is:inline></script>
-    <script src="/font-awesome/font-awesome-pro/light.js" is:inline></script>
-    <script src="/font-awesome/font-awesome-pro/duotone.js" is:inline></script>
-    <script src="/font-awesome/font-awesome-pro/brands.js" is:inline></script>
   </body>
 </html>

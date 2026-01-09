@@ -1,26 +1,27 @@
 ---
+import { Icon } from 'astro-icon/components'
+
 // src/components/Button.astro
 export interface Props {
-  text: string;
-  link: string;
-  target?: '_blank' | '_self' | '_parent' | '_top';
-  primary?: boolean;
+  text: string
+  link: string
+  target?: '_blank' | '_self' | '_parent' | '_top'
+  secondary?: boolean
+  icon?: string // Icon name, e.g., "lucide:file-pdf"
 }
 
-const { text, link, target = '_self', primary = false } = Astro.props;
+// Alapértelmezetten primary (rózsaszín), secondary prop-pal lehet szürkét kérni
+const { text, link, target = '_self', secondary = false, icon } = Astro.props
 
-// A 'primary' prop alapján választjuk ki a megfelelő stílusosztályt.
-// A .btn osztály mindkét esetben megmarad, mert az tartalmazza az alap stílusokat.
-const buttonClasses = primary
-  ? "btn btn-primary"   // Ha primary, akkor a rózsaszín stílust kapja
-  : "btn btn-secondary"; // Ha nem primary, akkor a szürke stílust
+const buttonClasses = secondary ? 'btn btn-secondary' : 'btn btn-primary'
 ---
 
-<a 
-  href={link} 
+<a
+  href={link}
   class={buttonClasses}
-  target={target}
+  {target}
   rel={target === '_blank' ? 'noopener noreferrer' : undefined}
 >
+  {icon && <Icon name={icon} />}
   {text}
 </a>

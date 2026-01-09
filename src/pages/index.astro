@@ -4,6 +4,7 @@ import newsData from '../data/news.yml'
 import NewsCards from '../components/NewsCards.astro'
 import emeltSzintuErettsegi from '../assets/images/emelt-szintu-erettsegi-felkeszito-tanfolyam.jpg'
 import Tanfolyamokrol from '../components/tanfolyamokrol.mdx'
+import MiertErdemesHozzankJelentkezni from '../components/miertErdemesHozzankJelentkezni.mdx'
 import Callout from '../components/Callout.astro'
 import Button from '../components/button.astro'
 
@@ -26,12 +27,6 @@ const featuredNews = news.slice(0, 3)
       <NewsCards items={featuredNews} />
     </div>
   </section>
-
-  <div class="my-4">
-    <Callout>
-      <p>Ez egy fontos üzenet, amit a callout komponensben jelenítek meg.</p>
-    </Callout>
-  </div>
 
   <section class="py-12">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -61,26 +56,27 @@ const featuredNews = news.slice(0, 3)
     <p class="mt-8 mb-4 text-gray-600">Kérjük, tanulmányozd át a tanfolyam szabályzatát:</p>
     <Button
       link="/dokumentumok/emelt_szintu_eretts_felkeszit_tanfolyamok_szabalyzat_2025.pdf"
+      icon="lucide:file-text"
       text="Tanfolyam Szabályzat"
       target="_blank"
     />
     <hr class="mt-8 border-gray-200" />
     <div class="mt-8 flex justify-center gap-4">
-      <Button link="#intro" text="Részletek" />
-      <Button link="/kapcsolat" text="Jelentkezés" primary />
+      <Button link="#intro" text="Részletek" secondary icon="lucide:file-text" />
+      <Button link="/kapcsolat" text="Jelentkezés" />
     </div>
   </section>
 
   <section id="intro" class="py-12">
-    <h2 id="bevezetes">A tanfolyamokról</h2>
+    <h2 id="bevezetes">1. A tanfolyamokról</h2>
     <div class="prose">
       <Tanfolyamokrol />
     </div>
   </section>
 
   <section id="section1" class="py-12">
-    <h2 id="fejezet-1">Fejezet 1</h2>
-    <p class="max-w-2xl">A fő tartalmi rész itt jelenik meg...</p>
+    <h2 id="fejezet-1">2. Miért érdemes hozzánk jelentkezni?</h2>
+    <MiertErdemesHozzankJelentkezni />
   </section>
 
   <section id="section2" class="py-12">

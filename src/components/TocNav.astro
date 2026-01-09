@@ -1,15 +1,15 @@
 ---
-const { variant = "desktop" } = Astro.props;
-const baseClasses = "flex flex-col";
-const isMobile = variant === "mobile";
-const containerClass = isMobile
-  ? `${baseClasses} px-4 py-2 gap-4`
-  : `${baseClasses} h-full px-6`;
-const listClass = isMobile ? "list-none pl-0 space-y-2 text-base" : "list-none pl-0 space-y-2 text-sm";
+const { variant = 'desktop' } = Astro.props
+const baseClasses = 'flex flex-col'
+const isMobile = variant === 'mobile'
+const containerClass = isMobile ? `${baseClasses} px-4 py-2 gap-4` : `${baseClasses} h-full px-6`
+const listClass = isMobile
+  ? 'list-none pl-0 space-y-2 text-base'
+  : 'list-none pl-0 space-y-2 text-sm'
 /**
  * A TocNav automatikusan kiemeli az éppen látható szakaszt
  * (pl. <section id="intro"> vagy <h2 id="section1"> alapján).
- * 
+ *
  * Nem kell YAML-ból beolvasni, mert dinamikusan végigmegy a DOM elemein.
  */
 ---
@@ -26,7 +26,8 @@ const listClass = isMobile ? "list-none pl-0 space-y-2 text-base" : "list-none p
       
       const onScroll = () => {
         let currentId = '';
-        const topThreshold = 150; // A viewport tetejétől számított 150px-es vonal
+      // Top bar (h-16 = 64px) + némi padding
+      const topThreshold = 80; 
 
         // Szűrjük azokat a címsorokat, amelyek már a küszöbérték fölött vannak
         const headingsAboveThreshold = this.headings.filter(h => {
@@ -49,7 +50,7 @@ const listClass = isMobile ? "list-none pl-0 space-y-2 text-base" : "list-none p
   }"
   class={containerClass}
 >
-  <h2 class={`text-lg font-semibold mb-4 ${isMobile ? "px-1" : ""}`}>Tartalomjegyzék</h2>
+  <h2 class={`text-lg font-semibold mb-4 ${isMobile ? 'px-1' : ''}`}>Tartalomjegyzék</h2>
   <nav>
     <ul class={listClass}>
       <template x-for="link in headings" :key="link.id">
@@ -58,8 +59,7 @@ const listClass = isMobile ? "list-none pl-0 space-y-2 text-base" : "list-none p
             :href="'#' + link.id"
             :class="activeId === link.id ? 'block pl-3 border-l-4 font-semibold transition no-underline' : 'block pl-3 border-l-4 border-transparent text-gray-700 hover:text-blue-600 hover:border-blue-200 transition no-underline'"
             :style="activeId === link.id ? { color: 'var(--link-base-color)', borderColor: 'var(--link-base-color)' } : {}"
-            x-text="link.label"
-          ></a>
+            x-text="link.label"></a>
         </li>
       </template>
     </ul>
