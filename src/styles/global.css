@@ -1,47 +1,51 @@
 @import 'tailwindcss';
+
 @layer base {
   :root {
     --link-base-color: rgb(27, 63, 123);
     --link-hover-color: rgb(204, 7, 123);
     --button-base-color: rgb(27, 63, 123);
-    --button-hover-color: rgb(183, 6, 103); /* Darker hover color */
+    --button-hover-color: rgb(183, 6, 103);
+  }
+
+  /* alap szövegszín mindenre */
+  body {
+    @apply text-gray-700;
   }
 
   /* MINDIG zárd ki a .prose-t, ha nem akarod felülírni a plugin stílusait */
 
   :not(.prose) h1 {
-    @apply mb-3 text-3xl font-bold;
+    @apply mb-3 text-3xl font-bold text-gray-700;
     scroll-margin-top: 80px;
   }
   :not(.prose) h2 {
-    @apply mb-3 text-2xl font-bold;
+    @apply mb-3 text-2xl font-bold text-gray-700;
     scroll-margin-top: 80px;
   }
   :not(.prose) h3 {
-    @apply mb-2 text-xl font-bold;
+    @apply mb-2 text-xl font-bold text-gray-700;
     scroll-margin-top: 80px;
   }
   :not(.prose) h4 {
-    @apply mb-2 text-lg font-bold;
+    @apply mb-2 text-lg font-bold text-gray-700;
     scroll-margin-top: 80px;
   }
   :not(.prose) h5 {
-    @apply mb-1 text-base font-bold;
+    @apply mb-1 text-base font-bold text-gray-700;
     scroll-margin-top: 80px;
   }
   :not(.prose) h6 {
-    @apply mb-1 text-sm font-bold;
+    @apply mb-1 text-sm font-bold text-gray-700;
     scroll-margin-top: 80px;
   }
 
   :not(.prose) p {
-    @apply mb-2 text-base leading-relaxed;
-    @apply text-gray-700;
+    @apply mb-2 text-base leading-relaxed text-gray-700;
   }
 
   :not(.prose) ul {
-    @apply mb-2 list-disc pl-6;
-    @apply text-gray-700;
+    @apply mb-2 list-disc pl-6 text-gray-700;
   }
 
   :not(.prose) a {
@@ -82,9 +86,8 @@
     @apply bg-gray-300;
   }
   /* --- END BUTTON STYLES --- */
-
-  /* stb. */
 }
+
 [x-cloak] {
   display: none !important;
 }

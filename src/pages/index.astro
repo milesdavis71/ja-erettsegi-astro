@@ -5,8 +5,8 @@ import NewsCards from '../components/NewsCards.astro'
 import emeltSzintuErettsegi from '../assets/images/emelt-szintu-erettsegi-felkeszito-tanfolyam.jpg'
 import Tanfolyamokrol from '../components/tanfolyamokrol.mdx'
 import MiertErdemesHozzankJelentkezni from '../components/miertErdemesHozzankJelentkezni.mdx'
-import Callout from '../components/Callout.astro'
 import Button from '../components/button.astro'
+import Tantargyak from '../components/tantargyak.mdx'
 
 export const frontmatter = {
   title: 'Emelt szintű érettségire felkészítő tanfolyamok',
@@ -80,8 +80,8 @@ const featuredNews = news.slice(0, 3)
   </section>
 
   <section id="section2" class="py-12">
-    <h2 id="fejezet-2">Fejezet 2</h2>
-    <p class="max-w-2xl">Scroll közben a jobb oldali navigáció követi a szekciókat.</p>
+    <h2 id="fejezet-2">3. Tantárgyak</h2>
+    <Tantargyak />
   </section>
 
   <section id="section3" class="py-12">
