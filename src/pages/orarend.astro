@@ -1,0 +1,15 @@
+---
+import TwoColumnLayout from '../layouts/TwoColumnLayout.astro'
+import OrarendTable from '../components/OrarendTable.astro'
+import schedule from '../data/schedule.yml'
+
+const onlineRows = schedule.filter((s) => s.mode === 'online')
+const classroomRows = schedule.filter((s) => s.mode === 'tantermi')
+---
+
+<TwoColumnLayout title="Érettségi felkészítő – Órarend">
+  <h1 class="mb-6 text-2xl font-bold">Órarend</h1>
+
+  <OrarendTable title="Online órák" rows={onlineRows} />
+  <OrarendTable title="Tantermi órák" rows={classroomRows} />
+</TwoColumnLayout>

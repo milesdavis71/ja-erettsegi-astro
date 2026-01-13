@@ -1,0 +1,13 @@
+---
+const { teachers } = Astro.props
+---
+
+<section>
+  <h1 class="mb-4 text-2xl font-bold">Oktatóink</h1>
+
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {teachers.map((teacher) => <TeacherCard teacher={teacher} />)}
+  </div>
+</section>
+
+--- import TeacherCard from "./TeacherCard.astro"; ---

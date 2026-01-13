@@ -1,0 +1,22 @@
+---
+const teacher = Astro.props.teacher
+---
+
+<a
+  href={`/tanar/${teacher.slug}`}
+  class="flex flex-col overflow-hidden rounded-lg bg-white shadow transition hover:shadow-lg"
+>
+  <img src={teacher.image} alt={teacher.name} class="h-48 w-full object-cover" loading="lazy" />
+
+  <div class="flex flex-1 flex-col p-4">
+    <p class="mb-1 text-sm font-medium text-pink-600">
+      {teacher.lessonTypes}
+    </p>
+    <h2 class="mb-1 text-lg font-semibold">
+      {teacher.name}
+    </h2>
+    <p class="text-sm text-gray-600">
+      {teacher.subject}
+    </p>
+  </div>
+</a>

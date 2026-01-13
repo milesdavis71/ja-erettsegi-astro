@@ -1,0 +1,19 @@
+- slug: 'kovacs-anna'
+  name: 'Kovács Anna'
+  subject: 'Matematika'
+  lessonTypes: 'Online és tantermi'
+  image: '/images/teachers/kovacs-anna.jpg'
+  thumbnail: '/images/teachers/kovacs-anna-thumb.jpg'
+  bio: |
+    Több mint 10 éve készítek fel diákokat közép- és emelt szintű matematika érettségire.
+    Az óráimon a lényeg az érthetőség és a rengeteg gyakorlás.
+
+- slug: 'szabo-peter'
+  name: 'Szabó Péter'
+  subject: 'Magyar nyelv és irodalom'
+  lessonTypes: 'Tantermi'
+  image: '/images/teachers/szabo-peter.jpg'
+  thumbnail: '/images/teachers/szabo-peter-thumb.jpg'
+  bio: |
+    Magyar szakos tanárként különösen fontosnak tartom a szövegértés és a szövegalkotás
+    tudatos fejlesztését. Sok éves érettségi tapasztalattal rendelkezem.
