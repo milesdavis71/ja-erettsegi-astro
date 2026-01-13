@@ -1,12 +1,16 @@
 ---
-const teacher = Astro.props.teacher
+const { teacher, showImage = true } = Astro.props
 ---
 
 <a
   href={`/tanar/${teacher.slug}`}
   class="flex flex-col overflow-hidden rounded-lg bg-white shadow transition hover:shadow-lg"
 >
-  <img src={teacher.image} alt={teacher.name} class="h-48 w-full object-cover" loading="lazy" />
+  {
+    showImage && (
+      <img src={teacher.image} alt={teacher.name} class="h-48 w-full object-cover" loading="lazy" />
+    )
+  }
 
   <div class="flex flex-1 flex-col p-4">
     <p class="mb-1 text-sm font-medium text-pink-600">

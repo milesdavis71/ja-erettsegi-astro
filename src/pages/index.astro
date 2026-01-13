@@ -5,6 +5,7 @@ import NewsCards from '../components/NewsCards.astro'
 import emeltSzintuErettsegi from '../assets/images/emelt-szintu-erettsegi-felkeszito-tanfolyam.jpg'
 import Tanfolyamokrol from '../components/tanfolyamokrol.mdx'
 import MiertErdemesHozzankJelentkezni from '../components/miertErdemesHozzankJelentkezni.mdx'
+import FelveteliPontok from '../components/felveteliPontok.mdx'
 import Button from '../components/button.astro'
 import Tantargyak from '../components/tantargyak.mdx'
 
@@ -85,7 +86,7 @@ const featuredNews = news.slice(0, 3)
   </section>
 
   <section id="section3" class="py-12">
-    <h2 id="kapcsolat">Kapcsolat</h2>
-    <p class="max-w-2xl">Itt jönne a footer vagy a kapcsolat űrlap.</p>
+    <h2 id="kapcsolat">Felvételi pontok</h2>
+    <FelveteliPontok />
   </section>
 </DefaultLayout>
