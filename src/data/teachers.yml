@@ -7,37 +7,194 @@
   bio: |
     Magyar-történelem szakos középiskolai tanár. A Karolina Óvoda, Általános Iskola, Gimnázium, AMI és Kollégium tanára. Rendszeresen részt vesz a történelem emelt szintű érettségijének javításában, vizsgáztatásában. Középszintű érettségi elnökséget is gyakran vállal. Az SZTE Junior Akadémia történelem emelt szintű egyik tantermi tanfolyamát 2024 őszétől tartja.
 
-- slug: 'szabo-peter'
-  name: 'Szabó Péter'
-  subject: 'Magyar nyelv és irodalom'
-  lessonTypes: 'Tantermi'
-  image: '/images/teachers/szabo-peter.jpg'
-  thumbnail: '/images/teachers/szabo-peter-thumb.jpg'
+- slug: 'biro-zsolt'
+  name: 'Bíró Zsolt'
+  subject: 'informatika'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/biro-zsolt-informatika.jpg'
+  thumbnail: '../images/tanarok/biro-zsolt-informatika-thumb.jpg'
   bio: |
-    Magyar szakos tanárként különösen fontosnak tartom a szövegértés és a szövegalkotás
-    tudatos fejlesztését. Sok éves érettségi tapasztalattal rendelkezem.
+    fff.
 
-# /images/tanarok/bekei-judit-angol.jpg
-# /images/tanarok/biczok-Laszlo-matematika.jpg
-# /images/tanarok/biro-zsolt-informatika.jpg
-# /images/tanarok/borosne-repasi-rita-biologia.jpg
-# /images/tanarok/csizmadia peter-angol.jpg
-# /images/tanarok/doka-erzsebet-kemia.jpg
-# /images/tanarok/farkas-judit-tortenelem.jpg
-# /images/tanarok/farkas-zsuzsa-fizika.jpg
-# /images/tanarok/gal-bela-biologia-old.jpg
-# /images/tanarok/gavran-laszlo-biologia.jpg
-# /images/tanarok/harmati-katalin-kemia.jpg
-# /images/tanarok/kosztolanyine-erzsebet-matematika.jpg
-# /images/tanarok/laszlo-imre-biologia.jpg
-# /images/tanarok/laszlo-imre-biologia-wrong-cut.jpg
-# /images/tanarok/mezo-tamas-fizika.jpg
-# /images/tanarok/raffay-zoltan-angol.jpg
-# /images/tanarok/sinkovicz-andrea.jpg
-# /images/tanarok/sos katalin-fizika.jpg
-# /images/tanarok/szaszakne-toth-judit-foldrajz.jpg
-# /images/tanarok/szeplaki-laura-biologia.jpg
-# /images/tanarok/szivos-adam-kemia.jpg
-# /images/tanarok/toth-karoly.jpg
-# /images/tanarok/toth-roland-biologia.jpg
-# /images/tanarok/vincze-istvan-fizika.jpg
+- slug: 'borosne-repasi-rita'
+  name: 'Borosné Repási Rita'
+  subject: 'biológia'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/borosne-repasi-rita-biologia.jpg'
+  thumbnail: '../images/tanarok/borosne-repasi-rita-biologia-thumb.jpg'
+  bio: |
+    fff.
+
+- slug: 'csizmadia peter'
+  name: 'Csizmadia Péter'
+  subject: 'angol'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/csizmadia peter-angol.jpg'
+  thumbnail: '../images/tanarok/csizmadia peter-angol-thumb.jpg'
+  bio: |
+    fff.
+
+- slug: 'doka-erzsebet'
+  name: 'Dóka Erzsébet'
+  subject: 'kémia'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/doka-erzsebet-kemia.jpg'
+  thumbnail: '../images/tanarok/doka-erzsebet-kemia-thumb.jpg'
+  bio: |
+    fff.
+
+- slug: 'farkas-judit'
+  name: 'Farkas Judit'
+  subject: 'történelem'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/farkas-judit-tortenelem.jpg'
+  thumbnail: '../images/tanarok/farkas-judit-tortenelem-thumb.jpg'
+  bio: |
+    fff.
+
+- slug: 'farkas-zsuzsa'
+  name: 'Farkas Zsuzsa'
+  subject: 'fizika'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/farkas-zsuzsa-fizika.jpg'
+  thumbnail: '../images/tanarok/farkas-zsuzsa-fizika-thumb.jpg'
+  bio: |
+    fff.
+
+- slug: 'gal-bela'
+  name: 'Gál Béla'
+  subject: 'biológia'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/gal-bela-biologia-old.jpg'
+  thumbnail: '../images/tanarok/gal-bela-biologia-old-thumb.jpg'
+  bio: |
+    fff.
+
+- slug: 'gavran-laszlo'
+  name: 'Gavran László'
+  subject: 'biológia'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/gavran-laszlo-biologia.jpg'
+  thumbnail: '../images/tanarok/gavran-laszlo-biologia-thumb.jpg'
+  bio: |
+    fff.
+
+- slug: 'harmati-katalin'
+  name: 'Harmati Katalin'
+  subject: 'kémia'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/harmati-katalin-kemia.jpg'
+  thumbnail: '../images/tanarok/harmati-katalin-kemia-thumb.jpg'
+  bio: |
+    fff.
+
+- slug: 'kosztolanyine-erzsebet'
+  name: 'Kosztolányiné Erzsébet'
+  subject: 'matematika'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/kosztolanyine-erzsebet-matematika.jpg'
+  thumbnail: '../images/tanarok/kosztolanyine-erzsebet-matematika-thumb.jpg'
+  bio: |
+    fff.
+
+- slug: 'laszlo-imre'
+  name: 'László Imre'
+  subject: 'biológia'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/laszlo-imre-biologia.jpg'
+  thumbnail: '../images/tanarok/laszlo-imre-biologia-thumb.jpg'
+  bio: |
+    fff.
+
+- slug: 'mezo-tamas'
+  name: 'Mező Tamás'
+  subject: 'fizika'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/mezo-tamas-fizika.jpg'
+  thumbnail: '../images/tanarok/mezo-tamas-fizika-thumb.jpg'
+  bio: |
+    fff.
+
+- slug: 'raffay-zoltan'
+  name: 'Raffay Zoltán'
+  subject: 'angol'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/raffay-zoltan-angol.jpg'
+  thumbnail: '../images/tanarok/raffay-zoltan-angol-thumb.jpg'
+  bio: |
+    fff.
+
+- slug: 'sinkovicz-andrea'
+  name: 'Sinkovicz Andrea'
+  subject: 'ccc'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/sinkovicz-andrea.jpg'
+  thumbnail: '../images/tanarok/sinkovicz-andrea-thumb.jpg'
+  bio: |
+    fff.
+
+- slug: 'sos-katalin'
+  name: 'Sós Katalin'
+  subject: 'fizika'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/sos-katalin-fizika.jpg'
+  thumbnail: '../images/tanarok/sos-katalin-fizika-thumb.jpg'
+  bio: |
+    fff.
+
+- slug: 'szaszakne-toth-judit'
+  name: 'Szaszakné Tóth Judit'
+  subject: 'földrajz'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/szaszakne-toth-judit-foldrajz.jpg'
+  thumbnail: '../images/tanarok/szaszakne-toth-judit-foldrajz-thumb.jpg'
+  bio: |
+    fff.
+
+- slug: 'szeplaki-laura'
+  name: 'Szeplaki Laura'
+  subject: 'biológia'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/szeplaki-laura-biologia.jpg'
+  thumbnail: '../images/tanarok/szeplaki-laura-biologia-thumb.jpg'
+  bio: |
+    fff.
+
+- slug: 'szivos-adam'
+  name: 'Szivos Adam'
+  subject: 'kémia'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/szivos-adam-kemia.jpg'
+  thumbnail: '../images/tanarok/szivos-adam-kemia-thumb.jpg'
+  bio: |
+    fff.
+
+- slug: 'toth-karoly'
+  name: 'Tóth Károly'
+  subject: 'ccc'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/toth-karoly.jpg'
+  thumbnail: '../images/tanarok/toth-karoly-thumb.jpg'
+  bio: |
+    fff.
+
+- slug: 'toth-roland'
+  name: 'Tóth Roland'
+  subject: 'biológia'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/toth-roland-biologia.jpg'
+  thumbnail: '../images/tanarok/toth-roland-biologia-thumb.jpg'
+  bio: |
+    fff.
+
+- slug: 'vincze-istvan'
+  name: 'Vincze István'
+  subject: 'fizika'
+  lessonTypes: 'ddd'
+  image: '../images/tanarok/vincze-istvan-fizika.jpg'
+  thumbnail: '../images/tanarok/vincze-istvan-fizika-thumb.jpg'
+  bio: |
+    fff.
+
+    TODO: bios, lessionTypes kitöltése
+    TODO: tanár képek méretezése, optimalizálása
