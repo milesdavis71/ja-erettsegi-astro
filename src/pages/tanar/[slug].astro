@@ -1,0 +1,53 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import teachers from '../../data/teachers.yml'
+import schedule from '../../data/schedule.yml'
+import ScheduleTable from '../../components/OrarendTable.astro'
+
+export async function getStaticPaths() {
+  return teachers.map((t) => ({
+    params: { slug: t.slug },
+    props: { teacher: t },
+  }))
+}
+
+const { teacher } = Astro.props
+
+// Tanárra szűrt órarend:
+const teacherSchedule = schedule.filter((item) => item.teacherSlug === teacher.slug)
+---
+
+<DefaultLayout title={teacher.name}>
+  <!-- Cím teljes szélességben -->
+  <header class="mb-6">
+    <h1 class="text-3xl font-bold">{teacher.name}</h1>
+    <div class="mt-2 h-1 w-24 bg-pink-400"></div>
+  </header>
+
+  <!-- Desktop nézet: kép + szöveg gridben -->
+  <section class="mb-8 grid grid-cols-1 items-start gap-6 md:grid-cols-12">
+    <div class="md:col-span-2">
+      <img src={teacher.thumbnail} alt={teacher.name} class="w-full rounded-lg shadow" />
+    </div>
+    <div class="md:col-span-10">
+      <p class="mb-1 text-sm font-medium text-pink-600">
+        {teacher.lessonTypes}
+      </p>
+      <p class="mb-3 text-sm text-gray-600">
+        Tantárgy: {teacher.subject}
+      </p>
+      <div class="prose max-w-none">
+        {teacher.bio}
+      </div>
+    </div>
+  </section>
+
+  <!-- Tanár órarendje – csak mobilon (md alatt) teljes szélességben legalul -->
+  {
+    teacherSchedule.length > 0 && (
+      <div class="mt-8 md:hidden">
+        <ScheduleTable title={`Órák ${teacher.name} vezetésével`} rows={teacherSchedule} />
+      </div>
+    )
+  }
+</DefaultLayout>

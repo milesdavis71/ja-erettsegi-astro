@@ -1,5 +1,5 @@
-- teacherSlug: 'kovacs-anna'
-  teacherName: 'Kovács Anna'
+- teacherSlug: 'ago-maria-katalin'
+  teacherName: 'ago-maria-katalin'
   subject: 'Matematika'
   mode: 'online' # "online" vagy "tantermi"
   day: 'Hétfő'

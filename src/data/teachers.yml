@@ -1,12 +1,11 @@
-- slug: 'kovacs-anna'
-  name: 'Kovács Anna'
-  subject: 'Matematika'
-  lessonTypes: 'Online és tantermi'
-  image: '/images/teachers/kovacs-anna.jpg'
-  thumbnail: '/images/teachers/kovacs-anna-thumb.jpg'
+- slug: 'ago-maria-katalin'
+  name: 'Ágó Mária Katalin'
+  subject: 'történelem'
+  lessonTypes: 'tantermi'
+  image: '../images/tanarok/ago-maria-magyar.jpg'
+  thumbnail: '../images/tanarok/ago-maria-magyar-thumb.jpg'
   bio: |
-    Több mint 10 éve készítek fel diákokat közép- és emelt szintű matematika érettségire.
-    Az óráimon a lényeg az érthetőség és a rengeteg gyakorlás.
+    Magyar-történelem szakos középiskolai tanár. A Karolina Óvoda, Általános Iskola, Gimnázium, AMI és Kollégium tanára. Rendszeresen részt vesz a történelem emelt szintű érettségijének javításában, vizsgáztatásában. Középszintű érettségi elnökséget is gyakran vállal. Az SZTE Junior Akadémia történelem emelt szintű egyik tantermi tanfolyamát 2024 őszétől tartja.
 
 - slug: 'szabo-peter'
   name: 'Szabó Péter'
@@ -17,3 +16,28 @@
   bio: |
     Magyar szakos tanárként különösen fontosnak tartom a szövegértés és a szövegalkotás
     tudatos fejlesztését. Sok éves érettségi tapasztalattal rendelkezem.
+
+# /images/tanarok/bekei-judit-angol.jpg
+# /images/tanarok/biczok-Laszlo-matematika.jpg
+# /images/tanarok/biro-zsolt-informatika.jpg
+# /images/tanarok/borosne-repasi-rita-biologia.jpg
+# /images/tanarok/csizmadia peter-angol.jpg
+# /images/tanarok/doka-erzsebet-kemia.jpg
+# /images/tanarok/farkas-judit-tortenelem.jpg
+# /images/tanarok/farkas-zsuzsa-fizika.jpg
+# /images/tanarok/gal-bela-biologia-old.jpg
+# /images/tanarok/gavran-laszlo-biologia.jpg
+# /images/tanarok/harmati-katalin-kemia.jpg
+# /images/tanarok/kosztolanyine-erzsebet-matematika.jpg
+# /images/tanarok/laszlo-imre-biologia.jpg
+# /images/tanarok/laszlo-imre-biologia-wrong-cut.jpg
+# /images/tanarok/mezo-tamas-fizika.jpg
+# /images/tanarok/raffay-zoltan-angol.jpg
+# /images/tanarok/sinkovicz-andrea.jpg
+# /images/tanarok/sos katalin-fizika.jpg
+# /images/tanarok/szaszakne-toth-judit-foldrajz.jpg
+# /images/tanarok/szeplaki-laura-biologia.jpg
+# /images/tanarok/szivos-adam-kemia.jpg
+# /images/tanarok/toth-karoly.jpg
+# /images/tanarok/toth-roland-biologia.jpg
+# /images/tanarok/vincze-istvan-fizika.jpg
