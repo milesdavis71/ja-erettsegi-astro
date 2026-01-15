@@ -1,26 +1,23 @@
 ---
+import Card from './Card.astro'
+
 const { teacher, showImage = true } = Astro.props
 ---
 
-<a
+<Card
   href={`/tanar/${teacher.slug}`}
-  class="flex flex-col overflow-hidden rounded-lg bg-white shadow transition hover:shadow-lg"
+  image={teacher.image}
+  imageAlt={teacher.name}
+  {showImage}
+  imageHeight="h-48"
 >
-  {
-    showImage && (
-      <img src={teacher.image} alt={teacher.name} class="h-48 w-full object-cover" loading="lazy" />
-    )
-  }
-
-  <div class="flex flex-1 flex-col p-4">
-    <p class="mb-1 text-sm font-medium text-pink-600">
-      {teacher.lessonTypes}
-    </p>
-    <h2 class="mb-1 text-lg font-semibold">
-      {teacher.name}
-    </h2>
-    <p class="text-sm text-gray-600">
-      {teacher.subject}
-    </p>
-  </div>
-</a>
+  <p slot="header" class="mb-1 text-sm font-medium text-pink-600">
+    {teacher.lessonTypes}
+  </p>
+  <h2 slot="title" class="mb-1 text-lg font-semibold">
+    {teacher.name}
+  </h2>
+  <p slot="subtitle" class="text-sm text-gray-600">
+    {teacher.subject}
+  </p>
+</Card>

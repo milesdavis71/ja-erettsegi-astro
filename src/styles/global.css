@@ -53,7 +53,7 @@
     text-decoration: none;
   }
 
-  :not(.prose) a:not(.news-card-link):not(.btn):hover {
+  :not(.prose) a:not(.btn):hover {
     color: var(--link-hover-color);
     text-decoration: underline;
   }
@@ -86,6 +86,12 @@
     @apply bg-gray-300;
   }
   /* --- END BUTTON STYLES --- */
+
+  /* Card linkek underline eltávolítása */
+  :not(.prose) .card-link:not(.btn):hover,
+  :not(.prose) .card-link a:not(.btn):hover {
+    text-decoration: none;
+  }
 }
 
 [x-cloak] {
