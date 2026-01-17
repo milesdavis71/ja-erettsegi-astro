@@ -4,6 +4,7 @@
   lessonTypes: 'tantermi órák'
   image: '../images/tanarok/ago-maria-magyar.jpg'
   thumbnail: '../images/tanarok/ago-maria-magyar-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/ago-maria-cv.pdf'
   bio: |
     Magyar-történelem szakos középiskolai tanár. A Karolina Óvoda, Általános Iskola, Gimnázium, AMI és Kollégium tanára. Rendszeresen részt vesz a történelem emelt szintű érettségijének javításában, vizsgáztatásában. Középszintű érettségi elnökséget is gyakran vállal. Az SZTE Junior Akadémia történelem emelt szintű egyik tantermi tanfolyamát 2024 őszétől tartja.
 
@@ -13,6 +14,7 @@
   lessonTypes: 'tantermi órák'
   image: '../images/tanarok/bekei-judit-angol.jpg'
   thumbnail: '../images/tanarok/bekei-judit-angol-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/bekei-judit-cv.pdf'
   bio: |
     Békei Judit angol szakos középiskolai tanár, az SZSZC Vasvári Pál Gazdasági és Informatikai Technikum intézményében tanít, rendszeresen részt vesz az angol tantárgy emelt szintű érettségijének értékelésében. Az SZTE Junior Akadémiához az idei tanévben csatlakozott.
 
@@ -22,6 +24,7 @@
   lessonTypes: 'tantermi és online órák'
   image: '../images/tanarok/biczok-laszlo-matematika.jpg'
   thumbnail: '../images/tanarok/biczok-laszlo-matematika-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/biczok-laszlo-cv-pdf'
   bio: |
     „Mindannyian tanulunk, cselekszünk és tanítunk.” Richard Bach tanítási mottóval, több mint 25 éves tanítási tapasztalattal rendelkező, a Junior Akadémián a kezdetek óta (5-6 éve) tanító matematika szakos középiskolai tanár. Napi tevékenységében felmerülő problémákra keresi az optimális megoldást: pl. a lemorzsolódás csökkenése, tanulók motiválása, differenciált tanulási folyamatok tervezése, sikeres érettségire való felkészítés.
 
@@ -31,6 +34,7 @@
   lessonTypes: 'hibrid oktatás'
   image: '../images/tanarok/biro-zsolt-informatika.jpg'
   thumbnail: '../images/tanarok/biro-zsolt-informatika-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/biro-zsolt-cv.pdf'
   bio: |
 
 - slug: 'borosne-repasi-rita'
@@ -39,6 +43,7 @@
   lessonTypes: 'online órák'
   image: '../images/tanarok/borosne-repasi-rita-biologia.jpg'
   thumbnail: '../images/tanarok/borosne-repasi-rita-biologia-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/borosne-repasi-rita-cv.pdf'
   bio: |
     Biológia–földrajz–angol szakos középiskolai tanár, aki a biológia és angol nyelv emeltszintű érettségi felkészítésben és vizsgáztatásban 15 éve aktív szerepet vállal. A miskolci Lévay József Református Gimnázium és Diákotthon pedagógusa, immár 28 éve tanít. Az online biológia tanfolyam oktatásába kapcsolódott be.
 
@@ -48,6 +53,7 @@
   lessonTypes: 'online'
   image: '../images/tanarok/csizmadia-peter-angol.jpg'
   thumbnail: '../images/tanarok/csizmadia-peter-angol-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/csizmadia-peter-cv.pdf'
   bio: |
     Csizmadia Péter, angol nyelv és kultúra tanára, az SZTE Idegennyelvi Kommunikációs Intézet nyelvtanára. 2008. óta nyelvvizsgáztat, 2019. óta vesz részt közép és emelt szintű angol érettségi vizsgáztatásban. Az SZTE Junior Akadémia angol emelt szintű érettségi tanfolyamát 2023. óta tartja.
 
@@ -57,6 +63,7 @@
   lessonTypes: 'online órák'
   image: '../images/tanarok/doka-erzsebet-kemia.jpg'
   thumbnail: '../images/tanarok/doka-erzsebet-kemia-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/doka-erzsebet-cv.pdf'
   bio: |
     A miskolci Lévay József Református Gimnázium és Diákotthon kémia tanára. A kémia órák megtartása mellett 2012 óta a természettudományos laboratórium vezetőjeként koordinálja annak munkáját. A kétszintű érettségi bevezetése óta részt vesz az emelt és középszintű vizsgadolgozatok javításában, az emelt kémia érettségi tantárgyi bizottságok munkájában. 2018-ban indult az első digitális eszközökkel támogatott tehetséggondozó osztály a Lévayban, ahol kémia tanárként kapcsolódott be a digitális oktatásba..
 
@@ -66,6 +73,7 @@
   lessonTypes: 'ddd'
   image: '../images/tanarok/farkas-zsuzsa-fizika.jpg'
   thumbnail: '../images/tanarok/farkas-zsuzsa-fizika-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/farkas-zsuzsanna-cv.pdf'
   bio: |
     Kémia-fizika szakos középiskolai tanár, egyetemi pályafutása során elsősorban fizika módszertannal és fizikatanár-képzéssel, illetve tudományos ismeretterjesztéssel foglalkozik. Több mint 15 éve szervez és tart fizika felvételi előkészítő foglalkozásokat a Juhász Gyula Pedagógusképző Kar fizika tanszékén, a Junior Akadémia elindulása után ennek szervezeti keretében. A szegedi székhelyű Maxim Kiadónál megjelent Út a tudáshoz középiskolai fizikatankönyv-családnak, illetve a hozzájuk tartozó digitális kiegészítő tananyagoknak, továbbá a Tematikus fizika feladatgyűjteménynek szerzője volt. 2006 óta a JGYPK fizika tanszéke – az ő szervezésében – ad otthont a fizika emelt szintű fizika érettségi vizsgák szóbeli fordulójának, részt vesz mind az írásbeli vizsgák javítóbizottságában, mind pedig a szóbeli vizsgákon elnökként és tagként is.
 
@@ -75,6 +83,7 @@
   lessonTypes: 'tantermi oktatás'
   image: '../images/tanarok/farkas-judit-tortenelem.jpg'
   thumbnail: '../images/tanarok/farkas-judit-tortenelem-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/farkas-judit-cv.pdf'
   bio: |
     fff.
 
@@ -84,6 +93,7 @@
   lessonTypes: 'ddd'
   image: '../images/tanarok/farkas-zsuzsa-fizika.jpg'
   thumbnail: '../images/tanarok/farkas-zsuzsa-fizika-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/farkas-zsuzsa-cv.pdf'
   bio: |
     fff.
 
@@ -93,6 +103,7 @@
   lessonTypes: 'ddd'
   image: '../images/tanarok/gal-bela-biologia-old.jpg'
   thumbnail: '../images/tanarok/gal-bela-biologia-old-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/gal-bela-cv.pdf'
   bio: |
     fff.
 
@@ -102,6 +113,7 @@
   lessonTypes: 'ddd'
   image: '../images/tanarok/gavran-laszlo-biologia.jpg'
   thumbnail: '../images/tanarok/gavran-laszlo-biologia-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/gavran-laszlo-cv.pdf'
   bio: |
     fff.
 
@@ -111,6 +123,7 @@
   lessonTypes: 'ddd'
   image: '../images/tanarok/harmati-katalin-kemia.jpg'
   thumbnail: '../images/tanarok/harmati-katalin-kemia-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/harmati-katalin-cv.pdf'
   bio: |
     fff.
 
@@ -120,6 +133,7 @@
   lessonTypes: 'tantermi oktatás'
   image: '../images/tanarok/kosztolanyine-erzsebet-matematika.jpg'
   thumbnail: '../images/tanarok/kosztolanyine-erzsebet-matematika-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/kosztolanyine-erzsebet-cv.pdf'
   bio: |
     Matematika–fizika szakos középiskolai tanár, a Szegedi Radnóti Miklós Kísérleti Gimnáziumban tanít. Több alkalommal részt vett a matematika tantárgy emelt szintű érettségijének értékelésében, rendszeresen készít fel diákokat emelt szintű matematika érettségire. Az SZTE Junior Akadémia emelt szintű matematika érettségi előkészítőjét 2025-től tartja.
 
@@ -129,6 +143,7 @@
   lessonTypes: 'ddd'
   image: '../images/tanarok/laszlo-imre-biologia.jpg'
   thumbnail: '../images/tanarok/laszlo-imre-biologia-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/laszlo-imre-cv.pdf'
   bio: |
     fff.
 
@@ -138,6 +153,7 @@
   lessonTypes: 'tantermi órák'
   image: '../images/tanarok/mezo-tamas-fizika.jpg'
   thumbnail: '../images/tanarok/mezo-tamas-fizika-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/mezo-tamas-cv.pdf'
   bio: |
     Dr. Mező Tamás kémia-fizika szakos középiskolai tanár. Nyugdíjba vonulásáig a Radnóti Miklós Kísérleti Gimnázium mesterpedagógus – kutatótanára. Tankönyvszerző, több országos fizikaverseny szervezőbizottsági tagja. Kezdetektől részt vett a kétszintű fizika érettségi fejlesztésében, feladatsorainak lektorálásában, az emelt szintű írásbeli megyei javításvezetője volt, a szóbeli vizsgákon rendszeresen elnökként és kérdezőtanárként is közreműködött. Több, emelt szintű érettségiztetésre felkészítő továbbképzést tartott a megyében. Már a Junior Akadémia létrejötte előtt is tanított az SZTE által szervezett emelt szintű vizsgára felkészítő tanfolyamokon.
 
@@ -147,6 +163,7 @@
   lessonTypes: 'ddd'
   image: '../images/tanarok/raffay-zoltan-angol.jpg'
   thumbnail: '../images/tanarok/raffay-zoltan-angol-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/raffay-zoltan-cv.pdf'
   bio: |
     fff.
 
@@ -156,6 +173,7 @@
   lessonTypes: 'ddd'
   image: '../images/tanarok/sinkovicz-andrea.jpg'
   thumbnail: '../images/tanarok/sinkovicz-andrea-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/sinkovicz-andrea-cv.pdf'
   bio: |
     fff.
 
@@ -165,6 +183,7 @@
   lessonTypes: 'ddd'
   image: '../images/tanarok/sos-katalin-fizika.jpg'
   thumbnail: '../images/tanarok/sos-katalin-fizika-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/sos-katalin-cv.pdf'
   bio: |
     fff.
 
@@ -174,6 +193,7 @@
   lessonTypes: 'ddd'
   image: '../images/tanarok/szaszakne-toth-judit-foldrajz.jpg'
   thumbnail: '../images/tanarok/szaszakne-toth-judit-foldrajz-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/szaszakne-toth-judit-cv.pdf'
   bio: |
     fff.
 
@@ -183,6 +203,7 @@
   lessonTypes: 'ddd'
   image: '../images/tanarok/szeplaki-laura-biologia.jpg'
   thumbnail: '../images/tanarok/szeplaki-laura-biologia-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/szeplaki-laura-cv.pdf'
   bio: |
     fff.
 
@@ -192,6 +213,7 @@
   lessonTypes: 'ddd'
   image: '../images/tanarok/szivos-adam-kemia.jpg'
   thumbnail: '../images/tanarok/szivos-adam-kemia-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/szivos-adam-cv.pdf'
   bio: |
     fff.
 
@@ -201,6 +223,7 @@
   lessonTypes: 'ddd'
   image: '../images/tanarok/toth-karoly.jpg'
   thumbnail: '../images/tanarok/toth-karoly-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/toth-karoly-cv.pdf'
   bio: |
     fff.
 
@@ -210,6 +233,7 @@
   lessonTypes: 'ddd'
   image: '../images/tanarok/toth-roland-biologia.jpg'
   thumbnail: '../images/tanarok/toth-roland-biologia-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/toth-roland-cv.pdf'
   bio: |
     fff.
 
@@ -219,6 +243,7 @@
   lessonTypes: 'ddd'
   image: '../images/tanarok/vincze-istvan-fizika.jpg'
   thumbnail: '../images/tanarok/vincze-istvan-fizika-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/vincze-istan-cv.pdf'
   bio: |
     fff.
 
