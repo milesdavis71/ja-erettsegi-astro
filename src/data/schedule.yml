@@ -1,7 +1,7 @@
 - teacherSlug: 'ago-maria-katalin'
-  teacherName: 'ago-maria-katalin'
-  subject: 'Matematika'
-  mode: 'online' # "online" vagy "tantermi"
+  teacherName: 'Ágó Mária Katalin'
+  subject: 'történelem'
+  lessonTypes: 'tantermi órák' # "online" vagy "tantermi"
   day: 'Hétfő'
   group: '12. emelt'
   time: '17:00–18:30'
@@ -12,7 +12,7 @@
 - teacherSlug: 'kovacs-anna'
   teacherName: 'Kovács Anna'
   subject: 'Matematika'
-  mode: 'tantermi'
+  lessonTypes: 'tantermi'
   day: 'Szerda'
   group: '12. közép'
   time: '16:00–17:30'
@@ -23,7 +23,7 @@
 - teacherSlug: 'szabo-peter'
   teacherName: 'Szabó Péter'
   subject: 'Magyar nyelv és irodalom'
-  mode: 'tantermi'
+  lessonTypes: 'tantermi'
   day: 'Kedd'
   group: '12. emelt'
   time: '17:00–18:30'

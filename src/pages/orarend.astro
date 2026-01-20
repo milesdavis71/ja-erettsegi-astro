@@ -4,8 +4,8 @@ import OrarendTable from '../components/OrarendTable.astro'
 import OrarendTable from '../components/OrarendTable.astro'
 import schedule from '../data/schedule.yml'
 
-const onlineRows = schedule.filter((s) => s.mode === 'online')
-const classroomRows = schedule.filter((s) => s.mode === 'tantermi')
+const onlineRows = schedule.filter((s) => s.lessonTypes === 'online')
+const classroomRows = schedule.filter((s) => s.lessonTypes === 'tantermi')
 ---
 
 <TwoColumnLayout title="Érettségi felkészítő – Órarend">

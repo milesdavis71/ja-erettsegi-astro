@@ -6,8 +6,9 @@ import emeltSzintuErettsegi from '../assets/images/emelt-szintu-erettsegi-felkes
 import Tanfolyamokrol from '../components/tanfolyamokrol.mdx'
 import MiertErdemesHozzankJelentkezni from '../components/miert_erdemes_hozzank_jelentkezni.mdx'
 import FelveteliPontok from '../components/felveteli_pontok.mdx'
-import Button from '../components/Button.astro'
+import Button from '../components/button.astro'
 import Tantargyak from '../components/tantargyak.mdx'
+import TeachersGrid from '../components/TeachersGrid.astro'
 
 export const frontmatter = {
   title: 'Emelt szintű érettségire felkészítő tanfolyamok',
@@ -88,5 +89,10 @@ const featuredNews = news.slice(0, 3)
   <section id="section3" class="py-12">
     <h2 id="kapcsolat">4. Felvételi pontok</h2>
     <FelveteliPontok />
+  </section>
+
+  <section id="section5" class="py-12">
+    <h2 id="kapcsolat">5. Oktatási formák, tanárok, tantárgyak</h2>
+    <TeachersGrid showImage={false} />
   </section>
 </DefaultLayout>

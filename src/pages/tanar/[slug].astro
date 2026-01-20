@@ -112,7 +112,7 @@ const teacherSchedule = (schedule as ScheduleItem[]).filter(
   <!-- Tanár órarendje – csak mobilon (md alatt) teljes szélességben legalul -->
   {
     teacherSchedule.length > 0 && (
-      <div class="mt-8 md:hidden">
+      <div class="mt-8">
         <ScheduleTable title={`Órák ${teacher.name} vezetésével`} rows={teacherSchedule} />
       </div>
     )
