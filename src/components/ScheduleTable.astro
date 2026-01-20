@@ -3,7 +3,7 @@ const { title, rows } = Astro.props
 
 // Oszlop-definíciók – innen épül a thead és a tbody is
 const columns = [
-  { key: 'teacherName', label: 'Oktató' },
+  { key: 'lessonTypes', label: 'Oktatási forma' },
   { key: 'subject', label: 'Tantárgy' },
   { key: 'day', label: 'Nap' },
   { key: 'group', label: 'Csoport' },
@@ -24,7 +24,7 @@ const columnsJson = JSON.stringify(columns)
     x-data={`{
       rows: ${rowsJson},
       columns: ${columnsJson},
-      sortKey: 'teacherName',
+      sortKey: 'lessonTypes',
       sortAsc: true,
       sortBy(key) {
         if (this.sortKey === key) {
