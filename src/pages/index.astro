@@ -6,6 +6,7 @@ import emeltSzintuErettsegi from '../assets/images/emelt-szintu-erettsegi-felkes
 import Tanfolyamokrol from '../components/tanfolyamokrol.mdx'
 import MiertErdemesHozzankJelentkezni from '../components/miert_erdemes_hozzank_jelentkezni.mdx'
 import FelveteliPontok from '../components/felveteli_pontok.mdx'
+import ArakFizetes from '../components/arak_fizetes.mdx'
 import Button from '../components/Button.astro'
 import Tantargyak from '../components/tantargyak.mdx'
 import TeachersGrid from '../components/TeachersGrid.astro'
@@ -17,6 +18,52 @@ export const frontmatter = {
 const { news } = newsData
 // Csak az első 3 hírt jelenítjük meg
 const featuredNews = news.slice(0, 3)
+
+// Sections konfigurációja
+const sections = [
+  {
+    id: 'intro',
+    headingId: 'bevezetes',
+    title: '1. A tanfolyamokról',
+    component: Tanfolyamokrol,
+    isTeachers: false,
+  },
+  {
+    id: 'section1',
+    headingId: 'fejezet-1',
+    title: '2. Miért érdemes hozzánk jelentkezni?',
+    component: MiertErdemesHozzankJelentkezni,
+    isTeachers: false,
+  },
+  {
+    id: 'section2',
+    headingId: 'fejezet-2',
+    title: '3. Tantárgyak',
+    component: Tantargyak,
+    isTeachers: false,
+  },
+  {
+    id: 'section3',
+    headingId: 'felveteli-pontok',
+    title: '4. Felvételi pontok',
+    component: FelveteliPontok,
+    isTeachers: false,
+  },
+  {
+    id: 'section4',
+    headingId: 'tanarok',
+    title: '5. Oktatási formák, tanárok, tantárgyak',
+    component: null,
+    isTeachers: true,
+  },
+  {
+    id: 'section5',
+    headingId: 'arak-fizetes',
+    title: '6. Árak, fizetés módja',
+    component: ArakFizetes,
+    isTeachers: false,
+  },
+]
 ---
 
 <!-- hello commit: egyszerű teszt módosítás az index oldalon -->
@@ -69,30 +116,18 @@ const featuredNews = news.slice(0, 3)
     </div>
   </section>
 
-  <section id="intro" class="py-12">
-    <h2 id="bevezetes">1. A tanfolyamokról</h2>
-    <div class="prose">
-      <Tanfolyamokrol />
-    </div>
-  </section>
-
-  <section id="section1" class="py-12">
-    <h2 id="fejezet-1">2. Miért érdemes hozzánk jelentkezni?</h2>
-    <MiertErdemesHozzankJelentkezni />
-  </section>
-
-  <section id="section2" class="py-12">
-    <h2 id="fejezet-2">3. Tantárgyak</h2>
-    <Tantargyak />
-  </section>
-
-  <section id="section3" class="py-12">
-    <h2 id="felveteli-pontok">4. Felvételi pontok</h2>
-    <FelveteliPontok />
-  </section>
-
-  <section id="section4" class="py-12">
-    <h2 id="tanarok">5. Oktatási formák, tanárok, tantárgyak</h2>
-    <TeachersGrid showImage={false} />
-  </section>
+  {
+    sections.map((section) => (
+      <section id={section.id} class="py-12">
+        <h2 id={section.headingId}>{section.title}</h2>
+        {section.isTeachers ? (
+          <TeachersGrid showImage={false} />
+        ) : (
+          <div class="prose">
+            <section.component />
+          </div>
+        )}
+      </section>
+    ))
+  }
 </DefaultLayout>
