@@ -50,7 +50,7 @@
 - slug: 'csizmadia-peter'
   name: 'Csizmadia Péter'
   subject: 'angol'
-  lessonTypes: 'online'
+  lessonTypes: 'online órák'
   image: '../images/tanarok/csizmadia-peter-angol.jpg'
   thumbnail: '../images/tanarok/csizmadia-peter-angol-thumb.jpg'
   pdf: '/dokumentumok/tanar-cv/csizmadia-peter-cv.pdf'
@@ -70,7 +70,7 @@
 - slug: 'farkas-zsuzsanna'
   name: 'Dr. Farkas Zsuzsanna'
   subject: 'történelem'
-  lessonTypes: 'ddd'
+  lessonTypes: 'tantermi órák'
   image: '../images/tanarok/farkas-zsuzsa-fizika.jpg'
   thumbnail: '../images/tanarok/farkas-zsuzsa-fizika-thumb.jpg'
   pdf: '/dokumentumok/tanar-cv/farkas-zsuzsanna-cv.pdf'
@@ -80,27 +80,17 @@
 - slug: 'farkas-judit'
   name: 'Farkas Judit'
   subject: 'fizika'
-  lessonTypes: 'tantermi oktatás'
+  lessonTypes: 'tantermi órák és távoktatás'
   image: '../images/tanarok/farkas-judit-tortenelem.jpg'
   thumbnail: '../images/tanarok/farkas-judit-tortenelem-thumb.jpg'
   pdf: '/dokumentumok/tanar-cv/farkas-judit-cv.pdf'
   bio: |
     fff.
 
-- slug: 'farkas-zsuzsa'
-  name: 'Farkas Zsuzsa'
-  subject: 'fizika'
-  lessonTypes: 'ddd'
-  image: '../images/tanarok/farkas-zsuzsa-fizika.jpg'
-  thumbnail: '../images/tanarok/farkas-zsuzsa-fizika-thumb.jpg'
-  pdf: '/dokumentumok/tanar-cv/farkas-zsuzsa-cv.pdf'
-  bio: |
-    fff.
-
 - slug: 'gal-bela'
   name: 'Gál Béla'
   subject: 'biológia'
-  lessonTypes: 'ddd'
+  lessonTypes: 'tantermi és online órák'
   image: '../images/tanarok/gal-bela-biologia-old.jpg'
   thumbnail: '../images/tanarok/gal-bela-biologia-old-thumb.jpg'
   pdf: '/dokumentumok/tanar-cv/gal-bela-cv.pdf'
@@ -110,27 +100,17 @@
 - slug: 'gavran-laszlo'
   name: 'Gavran László'
   subject: 'biológia'
-  lessonTypes: 'ddd'
+  lessonTypes: 'online órák'
   image: '../images/tanarok/gavran-laszlo-biologia.jpg'
   thumbnail: '../images/tanarok/gavran-laszlo-biologia-thumb.jpg'
   pdf: '/dokumentumok/tanar-cv/gavran-laszlo-cv.pdf'
   bio: |
     fff.
 
-- slug: 'harmati-katalin'
-  name: 'Harmati Katalin'
-  subject: 'kémia'
-  lessonTypes: 'ddd'
-  image: '../images/tanarok/harmati-katalin-kemia.jpg'
-  thumbnail: '../images/tanarok/harmati-katalin-kemia-thumb.jpg'
-  pdf: '/dokumentumok/tanar-cv/harmati-katalin-cv.pdf'
-  bio: |
-    fff.
-
 - slug: 'kosztolanyine-erzsebet'
   name: 'Dr. Kosztolányiné Nagy Erzsébet'
   subject: 'matematika'
-  lessonTypes: 'tantermi oktatás'
+  lessonTypes: 'tantermi órák'
   image: '../images/tanarok/kosztolanyine-erzsebet-matematika.jpg'
   thumbnail: '../images/tanarok/kosztolanyine-erzsebet-matematika-thumb.jpg'
   pdf: '/dokumentumok/tanar-cv/kosztolanyine-erzsebet-cv.pdf'
@@ -140,7 +120,7 @@
 - slug: 'laszlo-imre'
   name: 'László Imre'
   subject: 'biológia'
-  lessonTypes: 'ddd'
+  lessonTypes: 'online órák'
   image: '../images/tanarok/laszlo-imre-biologia.jpg'
   thumbnail: '../images/tanarok/laszlo-imre-biologia-thumb.jpg'
   pdf: '/dokumentumok/tanar-cv/laszlo-imre-cv.pdf'
@@ -157,13 +137,13 @@
   bio: |
     Dr. Mező Tamás kémia-fizika szakos középiskolai tanár. Nyugdíjba vonulásáig a Radnóti Miklós Kísérleti Gimnázium mesterpedagógus – kutatótanára. Tankönyvszerző, több országos fizikaverseny szervezőbizottsági tagja. Kezdetektől részt vett a kétszintű fizika érettségi fejlesztésében, feladatsorainak lektorálásában, az emelt szintű írásbeli megyei javításvezetője volt, a szóbeli vizsgákon rendszeresen elnökként és kérdezőtanárként is közreműködött. Több, emelt szintű érettségiztetésre felkészítő továbbképzést tartott a megyében. Már a Junior Akadémia létrejötte előtt is tanított az SZTE által szervezett emelt szintű vizsgára felkészítő tanfolyamokon.
 
-- slug: 'raffay-zoltan'
-  name: 'Raffay Zoltán'
-  subject: 'angol'
-  lessonTypes: 'ddd'
-  image: '../images/tanarok/raffay-zoltan-angol.jpg'
-  thumbnail: '../images/tanarok/raffay-zoltan-angol-thumb.jpg'
-  pdf: '/dokumentumok/tanar-cv/raffay-zoltan-cv.pdf'
+- slug: 'nemeth-veronika'
+  name: 'Németh Veronika'
+  subject: 'kémia'
+  lessonTypes: 'tantermi órák'
+  image: '../images/tanarok/sinkovicz-andrea.jpg'
+  thumbnail: '../images/tanarok/sinkovicz-andrea-thumb.jpg'
+  pdf: '/dokumentumok/tanar-cv/sinkovicz-andrea-cv.pdf'
   bio: |
     fff.
 

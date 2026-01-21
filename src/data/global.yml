@@ -13,7 +13,8 @@ menu:
     url: /kapcsolat
 
 site:
-  - title: Érettségifelkészítő
+  title: Érettségifelkészítő
 
 footer:
-  - address: Szeged
+  address: Szeged
+  email: info@example.com
