@@ -10,14 +10,16 @@ const { showToc } = Astro.props;
   <div class="max-w-[1440px] mx-auto">
     <div class="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
       <!-- Desktop nézet -->
-      <div class="hidden lg:flex items-center gap-4">
-        <a href="/" class="flex items-center gap-2">
-          <svg class="h-8 w-8 text-pink-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zM9.5 9.5a1 1 0 011-1h3a1 1 0 110 2h-3a1 1 0 01-1-1zm1.5 8.5a1 1 0 00-1 1v.5a1 1 0 102 0v-.5a1 1 0 00-1-1zm-3.03-5.28a.75.75 0 00-1.06-1.06l-1.5 1.5a.75.75 0 001.06 1.06l1.5-1.5zm6.06-1.06a.75.75 0 10-1.06 1.06l1.5 1.5a.75.75 0 001.06-1.06l-1.5-1.5z" clip-rule="evenodd" />
-          </svg>
-          <span class="text-xl font-semibold text-gray-900">{site.title}</span>
-        </a>
-      </div>
+<div class="hidden lg:flex items-center gap-4">
+  <a href="/" class="flex items-center gap-2">
+    <img
+      src="../images/ja-erettsegi-felkeszito-logo.svg"
+      alt="Logó"
+      class=""
+    />
+    <span class="text-xl font-semibold text-gray-900">{site.title}</span>
+  </a>
+</div>
       <div class="hidden lg:flex items-center">
         <div class="relative">
           <input

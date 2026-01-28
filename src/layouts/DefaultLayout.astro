@@ -3,6 +3,7 @@ import '../styles/global.css'
 import global from '../data/global.yml'
 import newsData from '../data/news.yml'
 import MainContent from '../components/MainContent.astro'
+import Favicon from '../components/Favicon.astro'
 import DesktopLeftSidebar from '../components/DesktopLeftSidebar.astro'
 import ContextualColumn from '../components/ContextualColumn.astro'
 import TopBar from '../components/TopBar.astro'
@@ -25,8 +26,8 @@ const showNewsSidebar = !showToc && sidebarNews.length > 0
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{frontmatter?.title ? `${frontmatter.title} – ${site.title}` : site.title}</title>
     <meta name="description" content={frontmatter?.description || site.description} />
+    <Favicon />
   </head>
-
   <body
     class="min-h-screen bg-gray-100 text-gray-800"
     x-data="{ sidebarOpen: false, tocOpen: false }"
