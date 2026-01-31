@@ -6,11 +6,11 @@ export const frontmatter = {
 }
 
 import DefaultLayout from '../layouts/DefaultLayout.astro'
+import TeachersGrid from '../components/TeachersGrid.astro'
 ---
 
 <DefaultLayout {frontmatter}>
   <section class="py-12">
-    <h2 class="mb-4 text-2xl font-semibold">Részletek</h2>
-    <p>Ez az oldal a Junior Akadémia különböző programjait mutatja be...</p>
+    <TeachersGrid showImage={true} />
   </section>
 </DefaultLayout>

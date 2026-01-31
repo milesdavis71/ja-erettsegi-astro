@@ -1,8 +1,10 @@
 ---
-const { title, rows } = Astro.props
+const { title, rows, showTeacherColumn = false } = Astro.props
 
-// Oszlop-definíciók – innen épül a thead és a tbody is
-const columns = [
+// Oszlop-definíciók – dinamikusan épül fel a tanár oszlop alapján
+const teacherColumn = { key: 'teacherName', label: 'Tanár', isTeacherLink: true }
+
+const baseColumns = [
   { key: 'lessonTypes', label: 'Oktatási forma' },
   { key: 'subject', label: 'Tantárgy' },
   { key: 'day', label: 'Nap' },
@@ -12,6 +14,9 @@ const columns = [
   { key: 'room', label: 'Terem' },
   { key: 'location', label: 'Helyszín' },
 ]
+
+// Ha showTeacherColumn true, akkor a tanár oszlopot az elejére tesszük
+const columns = showTeacherColumn ? [teacherColumn, ...baseColumns] : baseColumns
 
 const rowsJson = JSON.stringify(rows)
 const columnsJson = JSON.stringify(columns)
@@ -24,7 +29,7 @@ const columnsJson = JSON.stringify(columns)
     x-data={`{
       rows: ${rowsJson},
       columns: ${columnsJson},
-      sortKey: 'lessonTypes',
+      sortKey: '${showTeacherColumn ? 'teacherName' : 'lessonTypes'}',
       sortAsc: true,
       sortBy(key) {
         if (this.sortKey === key) {
@@ -61,7 +66,19 @@ const columnsJson = JSON.stringify(columns)
         <template x-for="(row, idx) in sortedRows" :key="idx">
           <tr class="border-t">
             <template x-for="col in columns" :key="col.key">
-              <td class="px-4 py-2 whitespace-nowrap" x-text="row[col.key]"></td>
+              <td class="px-4 py-2 whitespace-nowrap">
+                <!-- Ha ez a tanár oszlop, linkeljük -->
+                <template x-if="col.isTeacherLink">
+                  <a
+                    :href="`/tanar/${row.teacherSlug}`"
+                    class="text-blue-600 hover:text-blue-800 hover:underline"
+                    x-text="row[col.key]"></a>
+                </template>
+                <!-- Egyébként sima szöveg -->
+                <template x-if="!col.isTeacherLink">
+                  <span x-text="row[col.key]"></span>
+                </template>
+              </td>
             </template>
           </tr>
         </template>
