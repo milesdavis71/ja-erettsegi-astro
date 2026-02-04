@@ -1,0 +1,18 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Tanfolyamdij from '../components/tanfolyamdij.mdx'
+
+export const frontmatter = {
+  title: 'Tanfolyamdij visszaterítés',
+
+  sidebarNewsCount: 2,
+}
+---
+
+<DefaultLayout {frontmatter}>
+  <section>
+    <div class="prose">
+      <Tanfolyamdij />
+    </div>
+  </section></DefaultLayout
+>

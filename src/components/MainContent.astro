@@ -1,17 +1,18 @@
 ---
-const { frontmatter } = Astro.props;
+const { frontmatter } = Astro.props
 ---
-<main class="flex-1 w-full px-4 sm:px-6 py-6">
+
+<main class="w-full flex-1 px-4 py-6 sm:px-6">
   <!-- Page Title -->
-  {frontmatter?.title && (
-    <header class="mb-8">
-      <h1 class="text-xl font-bold border-b border-gray-200 pb-3 mb-4">
-        {frontmatter.title}
-      </h1>
-      {frontmatter?.description && (
+  {
+    frontmatter?.title && (
+      <header class="mb-8">
+        <h1 class="mb-4 border-b border-gray-200 pb-3 text-xl font-bold">{frontmatter.title}</h1>
+        {/* {frontmatter?.description && (
         <p class="text-gray-600">{frontmatter.description}</p>
-      )}
-    </header>
-  )}
+      )} */}
+      </header>
+    )
+  }
   <slot />
 </main>

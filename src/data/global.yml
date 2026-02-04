@@ -9,6 +9,9 @@ menu:
     label: Érettségi felkészítő tanfolyamok órarendje
     url: /erettsegi-felkeszito-tanfolyamok-orarendje
   - id: section3
+    label: Tanfolyamdíj visszatérítés
+    url: /tanfolyamdij_visszaterites
+  - id: section4
     label: Kapcsolat
     url: /kapcsolat
 
