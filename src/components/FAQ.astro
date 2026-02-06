@@ -1,0 +1,39 @@
+---
+import CheckIcon from './CheckIcon.astro'
+import { markdownToHtml } from '../lib/markdown.js'
+
+export interface Props {
+  questions: Array<{
+    question: string
+    answer: string // Markdown string
+  }>
+}
+
+const { questions } = Astro.props
+
+// Convert markdown answers to HTML
+const questionsWithHtml = questions.map((item) => ({
+  ...item,
+  htmlAnswer: markdownToHtml(item.answer),
+}))
+---
+
+<div class="faq-container">
+  <div class="faq-content">
+    {
+      questionsWithHtml.map((item) => (
+        <div class="faq-item">
+          <div class="faq-question">
+            <CheckIcon />
+            <span class="question-text">{item.question}</span>
+          </div>
+          <div class="faq-answer" set:html={item.htmlAnswer} />
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  /* A stílusok a globális CSS-ben vannak, itt csak a komponens specifikus stílusok maradnak */
+</style>

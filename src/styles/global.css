@@ -105,3 +105,83 @@
 [x-cloak] {
   display: none !important;
 }
+
+/* --- FAQ STYLES --- */
+.faq-container {
+  position: relative;
+}
+
+.faq-content {
+  margin-left: 2rem;
+  padding-left: 1.5rem;
+  border-left: 2px solid #e5e7eb;
+}
+
+.faq-item {
+  margin-bottom: 2rem;
+}
+
+.faq-item:last-child {
+  margin-bottom: 0;
+}
+
+.faq-question {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--primary-color);
+  position: relative;
+  left: -3.5rem; /* A check icon és a szöveg kilóg a behúzásból */
+}
+
+.faq-question .check-icon {
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.question-text {
+  flex: 1;
+}
+
+.faq-answer {
+  padding-left: 0.5rem;
+  margin-left: 1em;
+}
+
+.faq-answer * {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.faq-answer p:first-child {
+  margin-top: 0;
+}
+
+.faq-answer p:last-child {
+  margin-bottom: 0;
+}
+
+.faq-answer ul,
+.faq-answer ol {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.faq-answer li {
+  margin-bottom: 0.25rem;
+}
+
+.faq-answer a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.faq-answer a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+/* --- END FAQ STYLES --- */

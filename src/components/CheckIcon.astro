@@ -1,0 +1,24 @@
+---
+import { Icon } from 'astro-icon/components'
+
+export interface Props {
+  size?: number
+  color?: string
+}
+
+const { size = 24, color = 'var(--secondary-color)' } = Astro.props
+---
+
+<span class="check-icon">
+  <Icon name="lucide:check-circle" width={size} height={size} {color} />
+</span>
+
+<style>
+  .check-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
+  }
+</style>

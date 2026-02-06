@@ -1,0 +1,60 @@
+---
+import FAQ from '../components/FAQ.astro'
+
+const testQuestions = [
+  {
+    question: 'Hogyan tudok jelentkezni a tanfolyamra?',
+    answer:
+      'A jelentkezés regisztrációt követően a **Modulo Felvételi többletpont** jelentkezés felületén történik [itt](#). A részletes lépéseket megtalálod a csatolt Jelentkezési útmutatóban.',
+  },
+  {
+    question: 'Ki jelentkezhet a tanfolyamra?',
+    answer:
+      'A tanfolyamokat elsősorban középiskolás diákok számára ajánljuk, de kortól függetlenül bárki jelentkezhet, akkor is, ha már korábban befejezted iskolai tanulmányaidat.\n\n- Középiskolás diákok\n- Felnőttek\n- Korábbi végzősök',
+  },
+  {
+    question: 'Mikor lesz végleges a jelentkezés?',
+    answer:
+      'A jelentkezés akkor válik véglegessé, ha:\n\n1. A felnőttképzési szerződést letöltöd\n2. Aláírod (kiskorú esetén szülő is)\n3. PDF formátumban, szkennelve elküldöd a `tanfolyam.juniorakademia@szte.hu` e-mail címre.',
+  },
+  {
+    question: 'Milyen előnyökkel jár a tanfolyam?',
+    answer:
+      'A tanfolyam számos előnnyel jár:\n\n- **Intézményi többletpontok** a felvételinél\n- **Szakmai tudás** bővítése\n- **Próbaérettségi** lehetőség\n- **Tapasztalt oktatók**\n\n[További információkért kattints ide!](#)',
+  },
+]
+---
+
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ Komponens Teszt</title>
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body>
+    <div style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
+      <h1>FAQ Komponens Teszt</h1>
+      <p>
+        Ez egy teszt oldal az új FAQ komponenshez. A válaszok most már markdown formátumban vannak
+        megadva.
+      </p>
+
+      <div style="margin-top: 3rem;">
+        <h2>Példa FAQ lista markdown válaszokkal:</h2>
+        <FAQ questions={testQuestions} />
+      </div>
+
+      <div style="margin-top: 3rem; padding: 2rem; background: #f9f9f9; border-radius: 8px;">
+        <h3>Megjegyzések:</h3>
+        <ul>
+          <li>A kérdések előtt check icon található</li>
+          <li>A teljes markdown rész 2rem behúzással rendelkezik</li>
+          <li>A kérdések "kilógnak" a behúzásból</li>
+          <li>A válaszok markdown formátumban vannak megadva (félkövér, lista, linkek stb.)</li>
+          <li>A válaszoknak 1em bal margója van</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

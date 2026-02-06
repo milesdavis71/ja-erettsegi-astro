@@ -12,6 +12,9 @@ menu:
     label: Tanfolyamdíj visszatérítés
     url: /tanfolyamdij_visszaterites
   - id: section4
+    label: Gyakran ismételt kérdések
+    url: /gyakran-ismetelt-kerdesek
+  - id: section5
     label: Kapcsolat
     url: /kapcsolat
 
