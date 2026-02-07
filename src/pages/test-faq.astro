@@ -1,5 +1,6 @@
 ---
 import FAQ from '../components/FAQ.astro'
+import '../styles/global.css'
 
 const testQuestions = [
   {
@@ -10,7 +11,7 @@ const testQuestions = [
   {
     question: 'Ki jelentkezhet a tanfolyamra?',
     answer:
-      'A tanfolyamokat elsősorban középiskolás diákok számára ajánljuk, de kortól függetlenül bárki jelentkezhet, akkor is, ha már korábban befejezted iskolai tanulmányaidat.\n\n- Középiskolás diákok\n- Felnőttek\n- Korábbi végzősök',
+      'A tanfolyamokat elsősorban középiskolás diákok számára ajánljuk, de kortól függetlenül bárki jelentkezhet, akkor is, ha már korábban befejezted iskolai tanulmányaidat.\n- Középiskolás diákok\n- Felnőttek\n- Korábbi végzősök',
   },
   {
     question: 'Mikor lesz végleges a jelentkezés?',
@@ -30,7 +31,6 @@ const testQuestions = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAQ Komponens Teszt</title>
-    <link rel="stylesheet" href="/styles/global.css" />
   </head>
   <body>
     <div style="max-width: 800px; margin: 2rem auto; padding: 0 1rem;">
