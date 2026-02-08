@@ -8,6 +8,7 @@ import DesktopLeftSidebar from '../components/DesktopLeftSidebar.astro'
 import ContextualColumn from '../components/ContextualColumn.astro'
 import TopBar from '../components/TopBar.astro'
 import MobileOverlays from '../components/MobileOverlays.astro' // Új import
+import Footer from '../components/Footer.astro'
 
 const { frontmatter } = Astro.props
 const { site } = global
@@ -48,6 +49,8 @@ const showNewsSidebar = !showToc && sidebarNews.length > 0
 
       <ContextualColumn {showToc} {showNewsSidebar} {sidebarNews} />
     </div>
+
+    <Footer />
 
     <script>
       import '../scripts/alpine.js'

@@ -1,0 +1,85 @@
+---
+import global from '../data/global.yml'
+
+const { footer } = global
+---
+
+<footer class="bg-gray-800 px-4 py-8 text-gray-300 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-7xl">
+    <!-- Három oszlopos layout desktop nézetben, egy oszlop mobilon -->
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+      <!-- Első oszlop: Logó és gombok -->
+      <div class="space-y-4">
+        <div>
+          <img src={footer.logo} alt="Érettségifelkészítő logó" class="h-12 w-auto" />
+        </div>
+
+        <div class="space-y-3">
+          {
+            footer.buttons.map((button: any) => (
+              <a
+                href={button.url}
+                class="block w-full rounded-lg bg-blue-600 px-4 py-3 text-center font-medium text-white transition duration-200 hover:bg-blue-700"
+              >
+                {button.text}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Második oszlop: Elérhetőségeink -->
+      <div>
+        <h3 class="mb-4 text-lg font-semibold text-white">{footer.contact.title}</h3>
+        <ul class="space-y-2">
+          {
+            footer.contact.items.map((item: any) => {
+              const isExternal = item.url.startsWith('http')
+              return (
+                <li>
+                  <a
+                    href={item.url}
+                    class="text-gray-300 transition duration-200 hover:text-white"
+                    target={isExternal ? '_blank' : undefined}
+                    rel={isExternal ? 'noopener noreferrer' : undefined}
+                  >
+                    {item.text}
+                  </a>
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
+
+      <!-- Harmadik oszlop: Hasznos linkek -->
+      <div>
+        <h3 class="mb-4 text-lg font-semibold text-white">{footer.links.title}</h3>
+        <ul class="space-y-2">
+          {
+            footer.links.items.map((item: any) => {
+              const isPdf = item.url.endsWith('.pdf')
+              return (
+                <li>
+                  <a
+                    href={item.url}
+                    class="text-gray-300 transition duration-200 hover:text-white"
+                    target={isPdf ? '_blank' : undefined}
+                    rel={isPdf ? 'noopener noreferrer' : undefined}
+                  >
+                    {item.text}
+                  </a>
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright és egyéb információk -->
+    <div class="mt-8 border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
+      <p>&copy; {new Date().getFullYear()} Érettségifelkészítő. Minden jog fenntartva.</p>
+    </div>
+  </div>
+</footer>

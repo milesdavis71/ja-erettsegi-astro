@@ -22,5 +22,35 @@ site:
   title: Érettségifelkészítő
 
 footer:
-  address: Szeged
-  email: info@example.com
+  logo: /images/ja-erettsegi-felkeszito-logo.svg
+  buttons:
+    - text: Jelentkezés érettségi felkészítő tanfolyamra
+      url: /kapcsolat
+    - text: Jelentkezés emelt szintű érettségi felkészítő tanfolyamra
+      url: /kapcsolat
+  contact:
+    title: Elérhetőségeink
+    items:
+      - text: Email
+        url: mailto:tanfolyam.juniorakademia@szte.hu
+      - text: Telefon
+        url: tel:+36123456789
+      - text: Cím
+        url: https://maps.google.com/?q=Szeged
+      - text: Facebook
+        url: https://facebook.com
+      - text: Instagram
+        url: https://instagram.com
+  links:
+    title: Hasznos linkek
+    items:
+      - text: Tanfolyam szabályzat
+        url: /dokumentumok/emelt_szintu_eretts_felkeszit_tanfolyamok_szabalyzat_2025.pdf
+      - text: Gyakran ismételt kérdések
+        url: /gyakran-ismetelt-kerdesek
+      - text: Tanárok
+        url: /erettsegi-felkeszito-tanfolyamok-tanarai
+      - text: Órarend
+        url: /erettsegi-felkeszito-tanfolyamok-orarendje
+      - text: Tanfolyamdíj visszatérítés
+        url: /tanfolyamdij_visszaterites
