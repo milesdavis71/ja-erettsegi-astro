@@ -3,11 +3,12 @@ menu:
     label: Főoldal
     url: /
   - id: section1
-    label: Érettségi felkészítő tanfolyamok tanárai
-    url: /erettsegi-felkeszito-tanfolyamok-tanarai
-  - id: section2
     label: Hírek
     url: /hirek
+  - id: section2
+    label: Érettségi felkészítő tanfolyamok tanárai
+    url: /erettsegi-felkeszito-tanfolyamok-tanarai
+
   - id: section3
     label: Érettségi felkészítő tanfolyamok órarendje
     url: /erettsegi-felkeszito-tanfolyamok-orarendje
@@ -28,32 +29,35 @@ footer:
   logo: /images/ja-erettsegi-felkeszito-logo.svg
   buttons:
     - text: Jelentkezés érettségi felkészítő tanfolyamra
-      url: /kapcsolat
+      url:
     - text: Jelentkezés emelt szintű érettségi felkészítő tanfolyamra
       url: /kapcsolat
   contact:
     title: Elérhetőségeink
     items:
-      - text: Email
-        url: mailto:tanfolyam.juniorakademia@szte.hu
-      - text: Telefon
-        url: tel:+36123456789
       - text: Cím
-        url: https://maps.google.com/?q=Szeged
+        linktext: 6720 Szeged, Dugonics tér 13.
+        url: 'https://www.google.com/maps/place/Szeged,+Dugonics+t%C3%A9r+13,+6720+Magyarorsz%C3%A1g/@46.249963,20.146366,16z/data=!4m6!3m5!1s0x4744886ff72c2fa7:0x6d4bff212d8e49c7!8m2!3d46.2499629!4d20.1463656!16s%2Fg%2F11rg5_3q3f?hl=hu&entry=ttu&g_ep=EgoyMDI2MDIwNC4wIKXMDSoASAFQAw%3D%3D'
+      - text: Telefonszám
+        linktext: +36 62 544 696
+        url: tel:+36123456789
+      - text: E-mail cím
+        linktext: juniorakademia@szte.hu
+        url: mailto:juniorakademia@szte.hu
       - text: Facebook
-        url: https://facebook.com
+        linktext: szegedjuniorakademia/
+        url: https://www.facebook.com/szegedjuniorakademia
       - text: Instagram
-        url: https://instagram.com
+        linktext: sztejuniorakademia/
+        url: https://www.instagram.com/sztejuniorakademia/
   links:
     title: Hasznos linkek
     items:
-      - text: Tanfolyam szabályzat
-        url: /dokumentumok/emelt_szintu_eretts_felkeszit_tanfolyamok_szabalyzat_2025.pdf
-      - text: Gyakran ismételt kérdések
-        url: /gyakran-ismetelt-kerdesek
-      - text: Tanárok
-        url: /erettsegi-felkeszito-tanfolyamok-tanarai
-      - text: Órarend
-        url: /erettsegi-felkeszito-tanfolyamok-orarendje
-      - text: Tanfolyamdíj visszatérítés
-        url: /tanfolyamdij_visszaterites
+      - text: SZTE központi honlap felvételizőknek szóló oldala
+        url: /index
+      - text: SZTE Nyílt Nap
+        url: /index
+      - text: Szegedi Tehetséggondozó Tanács
+        url: /index
+      - text: Felvi.hu - "Minden, ami felsőoktatás"
+        url: /index

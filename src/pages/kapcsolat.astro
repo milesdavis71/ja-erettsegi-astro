@@ -1,14 +1,120 @@
 ---
 export const frontmatter = {
-  title: "Kapcsolat",
-  description: "Lépj kapcsolatba velünk bármelyik csatornán",
+  title: 'Kapcsolat',
+  description: 'Lépj kapcsolatba velünk bármelyik csatornán',
   sidebarNewsCount: 3,
-};
+}
 
 import DefaultLayout from '../layouts/DefaultLayout.astro'
+import global from '../data/global.yml'
+
+const { footer } = global
 ---
 
 <DefaultLayout {frontmatter}>
+  <div class="prose max-w-none">
+    <p class="mb-8 text-lg text-gray-600">
+      Kérdése van? Szívesen segítünk! Lépjen kapcsolatba velünk bármelyik alábbi csatornán.
+    </p>
 
- 
+    <!-- Két oszlopos elrendezés -->
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <!-- Első oszlop: Elérhetőségeink -->
+      <div class="rounded-lg bg-gray-50 p-6">
+        <h2 class="mb-6 border-b border-gray-200 pb-3 text-2xl font-bold text-gray-800">
+          {footer.contact.title}
+        </h2>
+        <ul class="space-y-4">
+          {
+            footer.contact.items.map((item: any) => {
+              const isExternal = item.url.startsWith('http')
+              return (
+                <li class="flex items-start">
+                  <div class="mr-3 mt-1">
+                    <svg class="h-5 w-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                      {
+                        item.text === 'Cím' && (
+                          <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                        )
+                      }
+                      {
+                        item.text === 'Telefonszám' && (
+                          <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                        )
+                      }
+                      {
+                        item.text === 'E-mail cím' && (
+                          <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                          <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                        )
+                      }
+                      {
+                        (item.text === 'Facebook' || item.text === 'Instagram') && (
+                          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd" />
+                        )
+                      }
+                    </svg>
+                  </div>
+                  <div>
+                    <span class="block font-medium text-gray-700">{item.text}:</span>
+                    <a
+                      href={item.url}
+                      class="text-blue-600 transition duration-200 hover:text-blue-800 hover:underline"
+                      target={isExternal ? '_blank' : undefined}
+                      rel={isExternal ? 'noopener noreferrer' : undefined}
+                    >
+                      {item.linktext}
+                    </a>
+                  </div>
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
+
+      <!-- Második oszlop: Hasznos linkek -->
+      <div class="rounded-lg bg-gray-50 p-6">
+        <h2 class="mb-6 border-b border-gray-200 pb-3 text-2xl font-bold text-gray-800">
+          {footer.links.title}
+        </h2>
+        <ul class="space-y-3">
+          {
+            footer.links.items.map((item: any) => {
+              const isPdf = item.url.endsWith('.pdf')
+              return (
+                <li>
+                  <a
+                    href={item.url}
+                    class="text-blue-600 transition duration-200 hover:text-blue-800 hover:underline"
+                    target={isPdf ? '_blank' : undefined}
+                    rel={isPdf ? 'noopener noreferrer' : undefined}
+                  >
+                    {item.text}
+                  </a>
+                </li>
+              )
+            })
+          }
+        </ul>
+      </div>
+    </div>
+
+    <!-- További információk -->
+    <div class="mt-12 rounded-lg bg-blue-50 p-6">
+      <h3 class="mb-4 text-xl font-bold text-gray-800">Gyakran ismételt kérdések</h3>
+      <p class="mb-4 text-gray-600">
+        További információkat keres? Tekintse meg a <a href="/gyakran-ismetelt-kerdesek" class="text-blue-600 hover:underline">Gyakran ismételt kérdések</a> oldalunkat, ahol választ találhat a leggyakoribb kérdésekre.
+      </p>
+      <a
+        href="/gyakran-ismetelt-kerdesek"
+        class="inline-flex items-center rounded-lg bg-blue-600 px-4 py-2 font-medium text-white transition duration-200 hover:bg-blue-700"
+      >
+        Tovább a GYIK oldalra
+        <svg class="ml-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
 </DefaultLayout>

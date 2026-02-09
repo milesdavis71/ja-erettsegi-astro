@@ -11,7 +11,7 @@ const { footer } = global
       <!-- Első oszlop: Logó és gombok -->
       <div class="space-y-4">
         <div>
-          <img src={footer.logo} alt="Érettségifelkészítő logó" class="h-12 w-auto" />
+          <img src={footer.logo} alt="Érettségifelkészítő logó" class="h-9 w-auto" />
         </div>
 
         <div class="space-y-3">
@@ -37,13 +37,14 @@ const { footer } = global
               const isExternal = item.url.startsWith('http')
               return (
                 <li>
+                  <span style="color: darksalmon">{item.text}</span>
                   <a
                     href={item.url}
                     class="text-gray-300 transition duration-200 hover:text-white"
                     target={isExternal ? '_blank' : undefined}
                     rel={isExternal ? 'noopener noreferrer' : undefined}
                   >
-                    {item.text}
+                    {item.linktext}
                   </a>
                 </li>
               )
@@ -78,8 +79,9 @@ const { footer } = global
     </div>
 
     <!-- Copyright és egyéb információk -->
-    <div class="mt-8 border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
+    <!-- <div class="mt-8 border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
       <p>&copy; {new Date().getFullYear()} Érettségifelkészítő. Minden jog fenntartva.</p>
     </div>
+  </div> -->
   </div>
 </footer>

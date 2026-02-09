@@ -4,6 +4,7 @@ import global from '../data/global.yml'
 import MainContent from '../components/MainContent.astro'
 import TopBar from '../components/TopBar.astro'
 import DesktopLeftSidebar from '../components/DesktopLeftSidebar.astro'
+import Footer from '../components/Footer.astro'
 
 const { frontmatter } = Astro.props
 const { site } = global
@@ -38,6 +39,8 @@ const showToc = false
 
       <!-- No right column in this layout -->
     </div>
+
+    <Footer />
 
     <script>
       import '../scripts/alpine.js'
