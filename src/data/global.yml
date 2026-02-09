@@ -6,15 +6,18 @@ menu:
     label: Érettségi felkészítő tanfolyamok tanárai
     url: /erettsegi-felkeszito-tanfolyamok-tanarai
   - id: section2
+    label: Hírek
+    url: /hirek
+  - id: section3
     label: Érettségi felkészítő tanfolyamok órarendje
     url: /erettsegi-felkeszito-tanfolyamok-orarendje
-  - id: section3
+  - id: section4
     label: Tanfolyamdíj visszatérítés
     url: /tanfolyamdij_visszaterites
-  - id: section4
+  - id: section5
     label: Gyakran ismételt kérdések
     url: /gyakran-ismetelt-kerdesek
-  - id: section5
+  - id: section6
     label: Kapcsolat
     url: /kapcsolat
 

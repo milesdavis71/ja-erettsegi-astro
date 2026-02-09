@@ -1,18 +1,43 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
-import GYIK from '../components/gyakran_ismetelt_kerdesek.mdx'
 
 export const frontmatter = {
   title: 'Gyakran ismételt kérdések',
 
-  sidebarNewsCount: 1,
+  sidebarNewsCount: 3,
 }
+import FAQ from '../components/FAQ.astro'
+import '../styles/global.css'
+
+const testQuestions = [
+  {
+    question: 'Hogyan tudok jelentkezni a tanfolyamra?',
+    answer:
+      'A jelentkezés regisztrációt követően a **Modulo Felvételi többletpont** jelentkezés felületén történik [itt](#). A részletes lépéseket megtalálod a csatolt Jelentkezési útmutatóban.',
+  },
+  {
+    question: 'Ki jelentkezhet a tanfolyamra?',
+    answer:
+      'A tanfolyamokat elsősorban középiskolás diákok számára ajánljuk, de kortól függetlenül bárki jelentkezhet, akkor is, ha már korábban befejezted iskolai tanulmányaidat.\n- Középiskolás diákok\n- Felnőttek\n- Korábbi végzősök',
+  },
+  {
+    question: 'Mikor lesz végleges a jelentkezés?',
+    answer:
+      'A jelentkezés akkor válik véglegessé, ha:\n\n1. A felnőttképzési szerződést letöltöd\n2. Aláírod (kiskorú esetén szülő is)\n3. PDF formátumban, szkennelve elküldöd a `tanfolyam.juniorakademia@szte.hu` e-mail címre.',
+  },
+  {
+    question: 'Milyen előnyökkel jár a tanfolyam?',
+    answer:
+      'A tanfolyam számos előnnyel jár:\n\n- **Intézményi többletpontok** a felvételinél\n- **Szakmai tudás** bővítése\n- **Próbaérettségi** lehetőség\n- **Tapasztalt oktatók**\n\n[További információkért kattints ide!](#)',
+  },
+]
 ---
 
 <DefaultLayout {frontmatter}>
-  <section>
-    <div class="prose">
-      <GYIK />
+  <!-- Hírek szekció -->
+  <section id="news" class="bg-gray-50 py-4">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <FAQ questions={testQuestions} />
     </div>
-  </section></DefaultLayout
->
+  </section>
+</DefaultLayout>

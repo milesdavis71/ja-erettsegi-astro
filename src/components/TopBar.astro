@@ -10,21 +10,20 @@ const { showToc } = Astro.props;
   <div class="max-w-[1440px] mx-auto">
     <div class="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
       <!-- Desktop nézet -->
-<div class="hidden lg:flex items-center gap-4">
+<div class="flex items-center gap-4">
   <a href="/" class="flex items-center gap-2">
     <img
-      src="../images/ja-erettsegi-felkeszito-logo.svg"
-      alt="Logó"
-      class=""
+      src="/images/ja-erettsegi-felkeszito-logo.svg"
+      alt="JA érettségi felkészítő logó"
+      class="h-8 w-auto"
     />
-    <span class="text-xl font-semibold text-gray-900">{site.title}</span>
   </a>
 </div>
       <div class="hidden lg:flex items-center gap-4">
         <div class="relative">
           <input
             type="search"
-            placeholder="Keresés..."
+            placeholder="Keresés (nem aktív)"
             class="block w-full rounded-md border-0 py-1.5 pl-10 pr-4 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-pink-600 sm:text-sm sm:leading-6"
           />
           <div class="absolute inset-y-0 left-0 flex items-center pl-3">
@@ -37,8 +36,15 @@ const { showToc } = Astro.props;
           href="/kapcsolat"
           class="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
         >
-          Jelentkezés a tanfolyamra
+          Jelentkezés érettségi felkészítő tanfolyamra
         </a>
+        <a
+          href="/kapcsolat"
+          class="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+        >
+          Jelentkezés emelt szintű érettségi felkészítő tanfolyamra
+        </a>
+
       </div>
 
       <!-- Mobil nézet -->

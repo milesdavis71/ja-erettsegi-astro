@@ -1,0 +1,17 @@
+---
+import TwoColumnLayout from '../layouts/TwoColumnLayout.astro'
+import newsData from '../data/news.yml'
+import NewsCards from '../components/NewsCards.astro'
+
+const { news } = newsData
+---
+
+<TwoColumnLayout
+  frontmatter={{ title: 'Hírek', description: 'Böngésszen az összes hírünk között.' }}
+>
+  <section id="all-news">
+    <div class="px-4 sm:px-6">
+      <NewsCards items={news} variant="grid" columns="grid-cols-1 md:grid-cols-2 xl:grid-cols-3" />
+    </div>
+  </section>
+</TwoColumnLayout>
