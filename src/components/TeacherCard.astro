@@ -6,7 +6,7 @@ const { teacher, showImage = true } = Astro.props
 
 <Card
   href={`/tanar/${teacher.slug}`}
-  image={teacher.image}
+  image={teacher.thumbnail}
   imageAlt={teacher.name}
   {showImage}
   imageHeight="h-48"
