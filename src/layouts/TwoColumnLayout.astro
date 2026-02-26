@@ -1,13 +1,16 @@
 ---
 import '../styles/global.css'
-import global from '../data/global.yml'
+import { getEntry } from 'astro:content'
 import MainContent from '../components/MainContent.astro'
 import TopBar from '../components/TopBar.astro'
 import DesktopLeftSidebar from '../components/DesktopLeftSidebar.astro'
 import Footer from '../components/Footer.astro'
 
 const { frontmatter } = Astro.props
-const { site } = global
+const globalEntry = await getEntry('global', 'config')
+if (!globalEntry) throw new Error('Missing global content entry: global/config')
+
+const { site } = globalEntry.data
 
 // This layout doesn't have the contextual right column, so TOC is never shown there.
 const showToc = false

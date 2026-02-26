@@ -1,9 +1,12 @@
 ---
 // src/components/TopBar.astro
-import global from "../data/global.yml";
+import { getEntry } from 'astro:content'
 
-const { site } = global;
-const { showToc } = Astro.props;
+const globalEntry = await getEntry('global', 'config')
+if (!globalEntry) throw new Error('Missing global content entry: global/config')
+
+const { site } = globalEntry.data
+const { showToc } = Astro.props
 ---
 
 <header class="sticky top-0 z-40 w-full flex-none bg-white border-b border-gray-200 shadow-sm">

@@ -6,9 +6,12 @@ export const frontmatter = {
 }
 
 import DefaultLayout from '../layouts/DefaultLayout.astro'
-import global from '../data/global.yml'
+import { getEntry } from 'astro:content'
 
-const { footer } = global
+const globalEntry = await getEntry('global', 'config')
+if (!globalEntry) throw new Error('Missing global content entry: global/config')
+
+const { footer } = globalEntry.data
 ---
 
 <DefaultLayout {frontmatter}>

@@ -1,7 +1,7 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
 import PdfViewer from '../../components/PdfViewer.astro'
-import teachers from '../../data/teachers.yml'
+import { getCollection } from 'astro:content'
 
 interface Teacher {
   slug: string
@@ -22,7 +22,8 @@ function isValidPdfPath(pdfPath: string) {
 }
 
 export async function getStaticPaths() {
-  return (teachers as Teacher[])
+  const teachers = (await getCollection('teachers')).map((entry) => entry.data as Teacher)
+  return teachers
     .filter((teacher) => teacher.pdf) // csak azok, akiknek van PDF-je
     .map((teacher) => ({
       params: { slug: teacher.slug },

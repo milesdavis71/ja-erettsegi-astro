@@ -1,8 +1,9 @@
 ---
 import TeacherCard from './TeacherCard.astro'
-import teachersData from '../data/teachers.yml'
+import { getCollection } from 'astro:content'
+
 const { showImage = true } = Astro.props
-const teachers = teachersData
+const teachers = (await getCollection('teachers')).map((entry) => entry.data)
 ---
 
 <section>

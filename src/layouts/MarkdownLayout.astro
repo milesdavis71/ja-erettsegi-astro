@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css'
-import global from '../data/global.yml'
-import newsData from '../data/news.yml'
+import { getCollection, getEntry } from 'astro:content'
 import MainContent from '../components/MainContent.astro'
 import TopBar from '../components/TopBar.astro'
 import DesktopLeftSidebar from '../components/DesktopLeftSidebar.astro'
@@ -9,8 +8,13 @@ import FooterSection from '../components/ContextualColumn.astro'
 import Footer from '../components/Footer.astro'
 
 const { frontmatter } = Astro.props
-const { site } = global
-const { news } = newsData
+const globalEntry = await getEntry('global', 'config')
+if (!globalEntry) throw new Error('Missing global content entry: global/config')
+
+const { site } = globalEntry.data
+const news = (await getCollection('news'))
+  .map((entry) => entry.data)
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 const currentPath = Astro.url.pathname
 const isIndexPage = currentPath === '/'
 const showToc = isIndexPage

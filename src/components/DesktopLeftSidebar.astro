@@ -1,8 +1,11 @@
 ---
-import NavigationMenu from "./NavigationMenu.astro";
-import global from "../data/global.yml";
+import NavigationMenu from './NavigationMenu.astro'
+import { getEntry } from 'astro:content'
 
-const { menu } = global;
+const globalEntry = await getEntry('global', 'config')
+if (!globalEntry) throw new Error('Missing global content entry: global/config')
+
+const { menu } = globalEntry.data
 ---
 
 <aside class="hidden lg:flex w-64 border-r border-gray-100 bg-white shadow-sm flex-shrink-0">

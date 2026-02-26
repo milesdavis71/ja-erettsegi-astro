@@ -1,11 +1,14 @@
 ---
 // src/components/MobileOverlays.astro
-import NavigationMenu from "../components/NavigationMenu.astro";
-import TocNav from "../components/TocNav.astro";
-import global from "../data/global.yml";
+import NavigationMenu from '../components/NavigationMenu.astro'
+import TocNav from '../components/TocNav.astro'
+import { getEntry } from 'astro:content'
 
-const { menu } = global;
-const { showToc } = Astro.props;
+const globalEntry = await getEntry('global', 'config')
+if (!globalEntry) throw new Error('Missing global content entry: global/config')
+
+const { menu } = globalEntry.data
+const { showToc } = Astro.props
 ---
 
 <!-- Mobil átfedések -->

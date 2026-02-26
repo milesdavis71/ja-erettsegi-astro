@@ -1,0 +1,53 @@
+---
+import { getCollection } from 'astro:content'
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+
+interface NewsItem {
+  id: number
+  title: string
+  slug: string
+  date: string
+  excerpt: string
+  image: string
+  category?: string
+}
+
+export async function getStaticPaths() {
+  const news = (await getCollection('news')).map((entry) => entry.data as NewsItem)
+
+  return news.map((item) => ({
+    params: { slug: item.slug },
+    props: { item },
+  }))
+}
+
+const { item } = Astro.props as { item: NewsItem }
+
+const frontmatter = {
+  title: item.title,
+  description: item.excerpt,
+  sidebarNewsCount: 3,
+}
+---
+
+<DefaultLayout {frontmatter}>
+  <article class="mx-auto max-w-3xl">
+    <header class="mb-6">
+      <p class="mb-2 text-sm text-gray-500">
+        {new Date(item.date).toLocaleDateString('hu-HU', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        })}
+      </p>
+      <h1 class="mb-4 text-3xl font-bold text-gray-900">{item.title}</h1>
+      {item.category && <p class="text-sm font-medium text-pink-600">{item.category}</p>}
+    </header>
+
+    <img src={item.image} alt={item.title} class="mb-8 w-full rounded-lg shadow" />
+
+    <div class="prose max-w-none">
+      <p>{item.excerpt}</p>
+    </div>
+  </article>
+</DefaultLayout>

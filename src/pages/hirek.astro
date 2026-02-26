@@ -1,9 +1,11 @@
 ---
 import TwoColumnLayout from '../layouts/TwoColumnLayout.astro'
-import newsData from '../data/news.yml'
+import { getCollection } from 'astro:content'
 import NewsCards from '../components/NewsCards.astro'
 
-const { news } = newsData
+const news = (await getCollection('news'))
+  .map((entry) => entry.data)
+  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 ---
 
 <TwoColumnLayout

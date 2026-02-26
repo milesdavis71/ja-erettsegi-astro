@@ -1,12 +1,13 @@
 ---
-import TocNav from "../components/TocNav.astro";
-import NewsCards from "../components/NewsCards.astro";
-import global from "../data/global.yml";
-import newsData from "../data/news.yml";
+import TocNav from '../components/TocNav.astro'
+import NewsCards from '../components/NewsCards.astro'
+import { getEntry } from 'astro:content'
 
-const { footer } = global;
-const { news } = newsData;
-const { showToc, showNewsSidebar, sidebarNews } = Astro.props;
+const globalEntry = await getEntry('global', 'config')
+if (!globalEntry) throw new Error('Missing global content entry: global/config')
+
+const { footer } = globalEntry.data
+const { showToc, showNewsSidebar, sidebarNews } = Astro.props
 ---
 
 <!-- Jobb oldali tartalom -->

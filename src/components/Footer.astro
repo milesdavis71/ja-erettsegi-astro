@@ -1,7 +1,10 @@
 ---
-import global from '../data/global.yml'
+import { getEntry } from 'astro:content'
 
-const { footer } = global
+const globalEntry = await getEntry('global', 'config')
+if (!globalEntry) throw new Error('Missing global content entry: global/config')
+
+const { footer } = globalEntry.data
 ---
 
 <footer class="bg-gray-800 px-4 py-8 text-gray-300 sm:px-6 lg:px-8">

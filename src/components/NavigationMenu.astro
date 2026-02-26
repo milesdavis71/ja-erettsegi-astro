@@ -5,7 +5,7 @@ const currentPath = Astro.url.pathname;
 /**
  * Megvizsgálja, hogy egy adott menüpont linkje aktív-e az aktuális URL alapján.
  * Kezeli a trailing slash-eket és az aloldalakat is.
- * @param {string} itemUrl - A menüpont URL-je a `global.yml`-ből.
+ * @param {string} itemUrl - A menüpont URL-je a global collectionből.
  * @returns {boolean} - Igaz, ha a link aktív, egyébként hamis.
  */
 function isLinkActive(itemUrl) {

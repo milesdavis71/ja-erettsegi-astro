@@ -1,7 +1,6 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
-import teachers from '../../data/teachers.yml'
-import schedule from '../../data/schedule.yml'
+import { getCollection } from 'astro:content'
 import ScheduleTable from '../../components/ScheduleTable.astro'
 
 interface Teacher {
@@ -21,18 +20,18 @@ interface ScheduleItem {
 }
 
 export async function getStaticPaths() {
-  return (teachers as Teacher[]).map((t) => ({
+  const teachers = (await getCollection('teachers')).map((entry) => entry.data as Teacher)
+  return teachers.map((t) => ({
     params: { slug: t.slug },
     props: { teacher: t },
   }))
 }
 
 const { teacher } = Astro.props as { teacher: Teacher }
+const schedule = (await getCollection('schedule')).map((entry) => entry.data as ScheduleItem)
 
 // Tanárra szűrt órarend:
-const teacherSchedule = (schedule as ScheduleItem[]).filter(
-  (item) => item.teacherSlug === teacher.slug
-)
+const teacherSchedule = schedule.filter((item) => item.teacherSlug === teacher.slug)
 ---
 
 <DefaultLayout title={teacher.name}>
