@@ -32,7 +32,7 @@ const frontmatter = {
           })
         }
       </p>
-      <h1 class="mb-4 text-2xl font-bold text-gray-900">{entry.data.title}</h1>
+      <h1 class="mb-4 text-2xl font-bold text-gray-900">{entry.data.fulltitle}</h1>
       <!-- {
         entry.data.category && (
           <p class="text-sm font-medium text-pink-600">{entry.data.category}</p>
@@ -42,7 +42,7 @@ const frontmatter = {
 
     <p class="mb-6 leading-relaxed font-semibold text-gray-600">{entry.data.lead}</p>
 
-    <img src={entry.data.image} alt={entry.data.title} class="mb-8 w-full rounded-lg shadow" />
+    <img src={entry.data.image} alt={entry.data.fulltitle} class="mb-8 w-full rounded-lg shadow" />
 
     <div class="prose prose-img:rounded-lg max-w-none">
       <Content />

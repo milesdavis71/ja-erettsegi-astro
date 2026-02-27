@@ -8,15 +8,17 @@
   "frontMatter.content.pageFolders": [
     {
       "title": "blog",
-      "path": "[[workspace]]/src/content/news"
+      "path": "[[workspace]]/src/content/news",
+      "filePrefix": null
     }
   ],
   "frontMatter.taxonomy.contentTypes": [
     {
       "name": "default",
+      "filePrefix": null,
       "pageBundle": false,
       "fileType": "mdx",
-      "previewPath": null,
+      // "previewPath": null,
       "template": ".frontmatter/templates/hir-sablon.mdx",
       "fields": [
         {
@@ -25,10 +27,15 @@
           "type": "string"
         },
         {
-          "title": "Description",
-          "name": "description",
+          "title": "FullTitle",
+          "name": "fulltitle",
           "type": "string"
         },
+        // {
+        //   "title": "Description",
+        //   "name": "description",
+        //   "type": "string"
+        // },
         {
           "title": "Publishing date",
           "name": "date",
@@ -36,26 +43,26 @@
           "default": "{{now}}",
           "isPublishDate": true
         },
-        {
-          "title": "Content preview",
-          "name": "preview",
-          "type": "image"
-        },
-        {
-          "title": "Is in draft",
-          "name": "draft",
-          "type": "draft"
-        },
-        {
-          "title": "Tags",
-          "name": "tags",
-          "type": "tags"
-        },
-        {
-          "title": "Categories",
-          "name": "categories",
-          "type": "categories"
-        },
+        // {
+        //   "title": "Content preview",
+        //   "name": "preview",
+        //   "type": "image"
+        // },
+        // {
+        //   "title": "Is in draft",
+        //   "name": "draft",
+        //   "type": "draft"
+        // },
+        // {
+        //   "title": "Tags",
+        //   "name": "tags",
+        //   "type": "tags"
+        // },
+        // {
+        //   "title": "Categories",
+        //   "name": "categories",
+        //   "type": "categories"
+        // },
         {
           "title": "id",
           "name": "id",

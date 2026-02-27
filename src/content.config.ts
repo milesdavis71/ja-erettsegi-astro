@@ -35,11 +35,12 @@ const news = defineCollection({
   schema: z.object({
     id: z.number(),
     title: z.string(),
-    date: z.string(),
+    fulltitle: z.string(),
+    date: z.date(),
     excerpt: z.string(),
     lead: z.string(),
     image: z.string(),
-    category: z.string().optional(),
+    // category: z.string().optional(),
   }),
 })
 

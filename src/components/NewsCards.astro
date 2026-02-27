@@ -6,6 +6,8 @@ type Variant = 'grid' | 'stack'
 interface NewsItem {
   id: number
   title: string
+  fulltitel?: string
+  fulltitle?: string
   slug: string
   date: string
   excerpt: string
@@ -32,12 +34,14 @@ const indicatorClass = isStack
 
 <div class={wrapperClass}>
   {
-    items.map((item) => (
+    items.map((item) => {
+      const displayTitle = item.fulltitel || item.fulltitle || item.title
+      return (
       <Card
         href={`/news/${item.slug}`}
         variant={variant}
         image={item.image}
-        imageAlt={item.title}
+        imageAlt={displayTitle}
         imageHeight={imageHeight}
         excerptClass={excerptClass}
         indicatorClass={indicatorClass}
@@ -55,12 +59,13 @@ const indicatorClass = isStack
           slot="title"
           class="mb-2 line-clamp-2 text-lg font-semibold text-gray-900 transition-colors duration-300 group-hover:text-[var(--link-hover-color)]"
         >
-          {item.title}
+          {displayTitle}
         </h3>
         <p slot="description" class={excerptClass}>
           {item.excerpt}
         </p>
       </Card>
-    ))
+      )
+    })
   }
 </div>
