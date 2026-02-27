@@ -4,7 +4,8 @@ import { getCollection } from 'astro:content'
 import NewsCards from '../components/NewsCards.astro'
 
 const news = (await getCollection('news'))
-  .map((entry) => entry.data)
+  .filter((entry) => entry.slug !== 'hir-sablon')
+  .map((entry) => ({ ...entry.data, slug: entry.slug }))
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 ---
 

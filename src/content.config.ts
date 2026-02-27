@@ -31,13 +31,13 @@ const schedule = defineCollection({
 })
 
 const news = defineCollection({
-  type: 'data',
+  type: 'content',
   schema: z.object({
     id: z.number(),
     title: z.string(),
-    slug: z.string(),
     date: z.string(),
     excerpt: z.string(),
+    lead: z.string(),
     image: z.string(),
     category: z.string().optional(),
   }),

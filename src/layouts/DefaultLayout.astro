@@ -15,7 +15,7 @@ if (!globalEntry) throw new Error('Missing global content entry: global/config')
 
 const { site } = globalEntry.data
 const news = (await getCollection('news'))
-  .map((entry) => entry.data)
+  .map((entry) => ({ ...entry.data, slug: entry.slug }))
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 const currentPath = Astro.url.pathname
 const isIndexPage = currentPath === '/'

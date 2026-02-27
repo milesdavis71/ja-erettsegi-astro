@@ -16,7 +16,8 @@ export const frontmatter = {
 }
 
 const news = (await getCollection('news'))
-  .map((entry) => entry.data)
+  .filter((entry) => entry.slug !== 'hir-sablon')
+  .map((entry) => ({ ...entry.data, slug: entry.slug }))
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 // Csak az első 3 hírt jelenítjük meg
 const featuredNews = news.slice(0, 3)
