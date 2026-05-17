@@ -1,9 +1,3 @@
 {
-  "IDX.agenticWorkspace": true,
-  "frontMatter.dashboard.openOnStart": false,
-  "frontMatter.panel.openOnSupportedFile": false,
-  "frontMatter.content.defaultFileType": "mdx",
-  "frontMatter.content.supportedFileTypes": [
-    "mdx"
-  ]
+  "IDX.agenticWorkspace": true
 }

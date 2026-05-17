@@ -4,7 +4,9 @@
   "frontMatter.preview.host": "http://localhost:4321",
   "frontMatter.content.publicFolder": "public",
   "frontMatter.content.defaultFileType": "mdx",
-  "frontMatter.content.supportedFileTypes": ["mdx"],
+  "frontMatter.content.supportedFileTypes": [
+    "mdx"
+  ],
   "frontMatter.content.pageFolders": [
     {
       "title": "blog",
@@ -18,7 +20,6 @@
       "filePrefix": null,
       "pageBundle": false,
       "fileType": "mdx",
-      // "previewPath": null,
       "template": ".frontmatter/templates/hir-sablon.mdx",
       "fields": [
         {
@@ -31,11 +32,6 @@
           "name": "fulltitle",
           "type": "string"
         },
-        // {
-        //   "title": "Description",
-        //   "name": "description",
-        //   "type": "string"
-        // },
         {
           "title": "Publishing date",
           "name": "date",
@@ -43,26 +39,6 @@
           "default": "{{now}}",
           "isPublishDate": true
         },
-        // {
-        //   "title": "Content preview",
-        //   "name": "preview",
-        //   "type": "image"
-        // },
-        // {
-        //   "title": "Is in draft",
-        //   "name": "draft",
-        //   "type": "draft"
-        // },
-        // {
-        //   "title": "Tags",
-        //   "name": "tags",
-        //   "type": "tags"
-        // },
-        // {
-        //   "title": "Categories",
-        //   "name": "categories",
-        //   "type": "categories"
-        // },
         {
           "title": "id",
           "name": "id",
@@ -85,5 +61,7 @@
         }
       ]
     }
-  ]
+  ],
+  "frontMatter.dashboard.openOnStart": false,
+  "frontMatter.panel.openOnSupportedFile": false
 }

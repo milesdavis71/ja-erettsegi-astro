@@ -1,10 +1,8 @@
 ---
 // src/components/TopBar.astro
-import { getEntry } from 'astro:content'
+import { getGlobalEntry } from '../lib/getGlobalEntry'
 
-const globalEntry = await getEntry('global', 'config')
-if (!globalEntry) throw new Error('Missing global content entry: global/config')
-
+const globalEntry = await getGlobalEntry()
 const { site } = globalEntry.data
 const { showToc } = Astro.props
 ---

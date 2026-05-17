@@ -2,11 +2,9 @@
 // src/components/MobileOverlays.astro
 import NavigationMenu from '../components/NavigationMenu.astro'
 import TocNav from '../components/TocNav.astro'
-import { getEntry } from 'astro:content'
+import { getGlobalEntry } from '../lib/getGlobalEntry'
 
-const globalEntry = await getEntry('global', 'config')
-if (!globalEntry) throw new Error('Missing global content entry: global/config')
-
+const globalEntry = await getGlobalEntry()
 const { menu } = globalEntry.data
 const { showToc } = Astro.props
 ---

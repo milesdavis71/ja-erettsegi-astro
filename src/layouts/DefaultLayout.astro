@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css'
-import { getCollection, getEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
 import MainContent from '../components/MainContent.astro'
 import Favicon from '../components/Favicon.astro'
 import DesktopLeftSidebar from '../components/DesktopLeftSidebar.astro'
@@ -8,11 +8,10 @@ import ContextualColumn from '../components/ContextualColumn.astro'
 import TopBar from '../components/TopBar.astro'
 import MobileOverlays from '../components/MobileOverlays.astro' // Új import
 import Footer from '../components/Footer.astro'
+import { getGlobalEntry } from '../lib/getGlobalEntry'
 
 const { frontmatter } = Astro.props
-const globalEntry = await getEntry('global', 'config')
-if (!globalEntry) throw new Error('Missing global content entry: global/config')
-
+const globalEntry = await getGlobalEntry()
 const { site } = globalEntry.data
 const news = (await getCollection('news'))
   .map((entry) => ({ ...entry.data, slug: entry.slug }))

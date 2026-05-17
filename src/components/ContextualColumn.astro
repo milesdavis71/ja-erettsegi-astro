@@ -1,11 +1,9 @@
 ---
 import TocNav from '../components/TocNav.astro'
 import NewsCards from '../components/NewsCards.astro'
-import { getEntry } from 'astro:content'
+import { getGlobalEntry } from '../lib/getGlobalEntry'
 
-const globalEntry = await getEntry('global', 'config')
-if (!globalEntry) throw new Error('Missing global content entry: global/config')
-
+const globalEntry = await getGlobalEntry()
 const { footer } = globalEntry.data
 const { showToc, showNewsSidebar, sidebarNews } = Astro.props
 ---
